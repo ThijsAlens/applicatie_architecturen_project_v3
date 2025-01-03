@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "klus")
 public class Klus {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "KLUS_ID")
     private Integer klusId;
@@ -46,6 +46,20 @@ public class Klus {
 
     @Column(name = "RATING")
     private Integer rating;
+    
+    public Klus() {
+    	
+    }
+    
+    public Klus(String name, String klantUsername, int prijs, String beschrijving) {
+		this.name = name;
+		this.klantUsername = klantUsername;
+		this.prijs = prijs;
+		this.beschrijving = beschrijving;
+		this.status = StatusEnum.BESCHIKBAAR;
+		this.klusjesmanUsername = null;
+		this.rating = null;
+	}
     
 }
 

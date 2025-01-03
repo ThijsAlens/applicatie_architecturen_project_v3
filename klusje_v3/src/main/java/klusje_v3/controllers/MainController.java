@@ -20,27 +20,28 @@ import jakarta.servlet.http.HttpSession;
 public class MainController {
 	
 	@Autowired
-	private static PersonService personService;
+	private PersonServiceImpl personService;
 	
-	/*
-	 * =======
-	 * helper functions
-	 * =======
-	 */
-	
-	public static ArrayList<String> getUserInfo() {
+	public ArrayList<String> getUserInfo() {
+		// helper function that gets the info of the current person logged in
 		// [0] = username ; [1] = functie
 		ArrayList<String> res = new ArrayList<String>();
 		res.add(SecurityContextHolder.getContext().getAuthentication().getName());
-		res.add(personService.getPersonByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).getFunctie());
+		try {
+			res.add(personService.getPersonByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).getFunctie());
+		} catch (Exception e) {
+			System.out.println("error bij het ophalen van de rol van de ingelogde gebruiker");
+			res.add("NOT_LOGGED_IN");
+		}
+		System.out.println("username = " + res.get(0) + "\tfunctie = " + res.get(1));
 		return res;
 	}
 	
 	@GetMapping("/")
 	public String index() {
-		if (getUserInfo().get(1) == "KLANT") {
+		if (getUserInfo().get(1).equals("KLANT")) {
 			return "/klant/index";
-		} else if (getUserInfo().get(1) == "KLUSJESMAN") {
+		} else if (getUserInfo().get(1).equals("KLUSJESMAN")) {
 			return "/klusjesman/index";
 		}
 		return "index";
