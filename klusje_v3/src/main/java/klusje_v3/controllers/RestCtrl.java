@@ -15,7 +15,7 @@ public class RestCtrl {
 	private PersonServiceImpl personService;
 	
 	@GetMapping("/person/{username}")
-	public Person getPersonById(@PathVariable String username) {
-		return personService.getPersonByUsername(username);
+	public String getPersonById(@PathVariable String username) {
+		return personService.getPersonByUsername(username).getUsername();
 	}
 }

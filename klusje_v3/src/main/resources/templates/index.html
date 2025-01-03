@@ -5,6 +5,7 @@
 	
 	<div>
 		<p>leuke index</p>
+		<p>Welkom, <span th:text="${#authentication.name}">User</span> </p>
 	</div>
 	
 	<div th:replace="fragments/general.html :: footer"></div>

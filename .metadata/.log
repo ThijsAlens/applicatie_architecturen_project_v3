@@ -2576,10 +2576,17 @@ java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:03:37.047
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:55:39.606
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2593,10 +2600,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:04:37.370
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:55:44.244
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2610,10 +2624,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:07:08.502
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:58:21.968
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2627,10 +2648,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:07:39.965
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:58:29.250
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2644,10 +2672,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:07:47.923
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:58:33.268
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2661,6 +2696,7 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 0 2025-01-03 19:08:01.651
 !MESSAGE Error occurred while reading master table file
 !STACK 0
@@ -2701,6 +2737,12 @@ java.lang.IllegalArgumentException: Cannot set lower sequence number for root (p
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:35:03.739
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2714,10 +2756,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:09:17.182
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:35:48.646
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2731,10 +2780,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:11:08.418
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:36:13.681
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2748,6 +2804,7 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 0 2025-01-03 19:13:35.321
 !MESSAGE Error occurred while reading master table file
 !STACK 0
@@ -2788,6 +2845,12 @@ java.lang.IllegalArgumentException: Cannot set lower sequence number for root (p
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:42:30.376
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2801,10 +2864,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:15:38.982
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:42:49.449
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2818,10 +2888,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:16:06.184
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:44:10.554
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2835,10 +2912,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:16:22.702
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:44:35.833
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2852,10 +2936,17 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:18:50.390
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:45:18.442
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2869,6 +2960,7 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 0 2025-01-03 19:20:19.309
 !MESSAGE Error occurred while reading master table file
 !STACK 0
@@ -2909,6 +3001,12 @@ java.lang.IllegalArgumentException: Cannot set lower sequence number for root (p
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
 !STACK 0
 java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:45:32.410
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/stijn/Documents/workspace-spring-tool-suite-4-4.26.0.RELEASE/applicatie_architecturen_project_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
 	at java.base/java.io.FileInputStream.open0(Native Method)
 	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
@@ -2921,6 +3019,7 @@ java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.pl
 	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.jdt.core 4 4 2025-01-03 19:25:57.957
 !MESSAGE Failed to save JDT index: Index for /klusje_v3
@@ -3594,3 +3693,5 @@ java.lang.IllegalArgumentException: Cannot set lower sequence number for root (p
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+=======
+>>>>>>> f2c2f97 (verder aan login + klusmodel, -repo en -service)
