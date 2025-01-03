@@ -4,6 +4,13 @@
     <div th:replace="fragments/general.html :: head"></div>
     <div th:replace="fragments/general.html :: header"></div>
 	
+	<!-- tijdelijke tests -->
+	<p th:text="${session.checked_person}"></p>
+	<form action= "/rest_stuff_post" method="post">
+		<input type="text" id="person" name="person" placeholder="person">
+		<input type="submit" value="test">
+	</form>
+	
 	<div>
 		<p th:text="${session.allKlusjes}"></p>
 	</div>

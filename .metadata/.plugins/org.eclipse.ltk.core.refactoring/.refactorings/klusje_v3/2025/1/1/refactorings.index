@@ -1,2 +1,5 @@
 1735914928462	Rename package 'controller'
 1735914958505	Rename package 'controllers'
+1735920581019	Delete element
+1735921042284	Rename type 'PeopleService'
+1735921247499	Rename package 'repository'

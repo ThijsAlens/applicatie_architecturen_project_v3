@@ -21,7 +21,7 @@ public class SecurityModule {
 	public SecurityFilterChain beveilig(HttpSecurity http) throws Exception {
 	http
 	.authorizeHttpRequests(authorize -> authorize
-		.requestMatchers("/**").permitAll()
+		.anyRequest().permitAll()
 	)
 	.formLogin(form -> form 
 		.loginPage("/login").permitAll()
@@ -39,12 +39,8 @@ public class SecurityModule {
         auth
             .jdbcAuthentication()
             .dataSource(dataSource)
-            .usersByUsernameQuery("SELECT username, password,1 FROM people WHERE username = ?")
-            .authoritiesByUsernameQuery(
-                    "SELECT p.username, r.ROLE_NAME FROM people p " +
-                    "JOIN user_roles ur ON p.username = ur.username " +
-                    "JOIN roles r ON ur.ROLE_ID = r.ROLE_ID " +
-                    "WHERE p.username = ?")
+            .usersByUsernameQuery("SELECT username, password, enabled FROM people WHERE username = ?")
+            .authoritiesByUsernameQuery("SELECT username, auth FROM authorities WHERE username = ?")
             .passwordEncoder(NoOpPasswordEncoder.getInstance());  // No password encoder for plain text passwords
     }
 }

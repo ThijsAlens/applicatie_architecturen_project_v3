@@ -647,3 +647,1863 @@ END
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-03 16:44:31.047
 !MESSAGE Classpath changed for project: klusje_v3
+
+!ENTRY org.eclipse.jdt.core 2 0 2025-01-03 16:51:49.045
+!MESSAGE Java Index broken - will be automatically deleted to repair: file:/home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index
+!STACK 0
+java.io.UTFDataFormatException: Failed to read index data from file:/home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index at offset 1583 and size 1667331177
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:685)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults(DiskIndex.java:180)
+	at org.eclipse.jdt.internal.core.index.Index.query(Index.java:169)
+	at org.eclipse.jdt.internal.core.index.Index.getMetaIndexQualifications(Index.java:257)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager$MetaIndexUpdateRequest.execute(IndexManager.java:1755)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:542)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.eclipse.jdt.internal.compiler.util.HashtableOfObject.<init>(HashtableOfObject.java:57)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:681)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults(DiskIndex.java:180)
+	at org.eclipse.jdt.internal.core.index.Index.query(Index.java:169)
+	at org.eclipse.jdt.internal.core.index.Index.getMetaIndexQualifications(Index.java:257)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager$MetaIndexUpdateRequest.execute(IndexManager.java:1755)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:542)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager$$Lambda/0x00000001007cfdd8.run(Unknown Source)
+	at java.base/java.lang.Thread.runWith(Thread.java:1596)
+	... 1 more
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 16:52:54.384
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 16:52:54.387
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:53:17.105
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:55:50.276
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:55:56.061
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-01-03 16:55:57.289
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:56:56.335
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:57:53.278
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-03 16:57:53.281
+!MESSAGE Classpath changed for project: klusje_v3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-01-03 16:57:53.350
+!MESSAGE Classpath changed for project: klusje_v3
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 16:58:17.162
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 16:58:17.163
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 16:59:59.085
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:00:42.912
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:02:57.036
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-01-03 17:02:58.386
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:04:59.143
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:04:59.144
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:05:13.814
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:08:24.057
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:09:29.957
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:09:41.017
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:10:13.879
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:10:13.880
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:10:17.771
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:12:18.844
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:13:39.442
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:15:17.792
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:15:17.793
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:16:14.994
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:16:56.049
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:17:14.249
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:17:22.283
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:20:40.112
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:20:47.498
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:20:53.125
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:21:14.950
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:21:15.035
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:21:15.035
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:21:19.563
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:22:20.560
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:22:45.760
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:23:28.948
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:23:29.969
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:24:05.560
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:25:27.628
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:25:34.607
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:26:15.575
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:26:15.575
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:27:11.016
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:27:23.527
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:27:27.011
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:28:37.930
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:32:11.071
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:32:11.072
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:34:08.547
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:34:14.059
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-01-03 17:34:28.436
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:34:40.432
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:36:17.402
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:37:35.461
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:37:42.545
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:39:08.608
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:39:08.608
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:43:15.166
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:44:01.536
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:44:11.435
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:44:22.800
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:44:30.201
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:44:33.599
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:45:19.590
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:45:28.521
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:46:57.651
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:47:04.913
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:48:15.230
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:48:15.231
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:50:40.480
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:52:35.620
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:53:47.876
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:53:47.877
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:54:44.210
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:56:19.808
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:57:38.786
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:57:51.591
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 17:59:01.044
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 17:59:44.221
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 17:59:44.221
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 18:05:58.851
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 18:05:58.851
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:13:33.682
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 18:14:20.780
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 18:14:20.781
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:14:53.491
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:19:37.638
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-01-03 18:19:38.657
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 18:19:53.503
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 18:19:53.504
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:22:05.067
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:22:53.196
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:23:50.747
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:24:26.728
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:25:12.563
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:25:36.900
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.core.resources 4 0 2025-01-03 18:27:05.127
+!MESSAGE Error occurred while reading master table file
+!STACK 0
+java.nio.charset.MalformedInputException: Input length = 1
+	at java.base/java.nio.charset.CoderResult.throwException(CoderResult.java:279)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:405)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:347)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:436)
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3395)
+	at org.eclipse.core.internal.resources.SaveManager.getBadSequenceNumberErrorMessage(SaveManager.java:1670)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1651)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-01-03 18:27:05.127
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 7, new: 6). Location: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resourcesTimestamps and tree sequence numbers from file:
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1652)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1330)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1321)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1294)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:27:16.733
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:28:28.530
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:28:35.437
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.jdt.core 4 4 2025-01-03 18:29:03.048
+!MESSAGE Failed to save JDT index: Index for /klusje_v3
+!STACK 0
+java.io.FileNotFoundException: /home/thijs-alens/Documents/java_v3/.metadata/.plugins/org.eclipse.jdt.core/1231529075.index (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at org.eclipse.jdt.internal.core.index.FileIndexLocation.getInputStream(FileIndexLocation.java:84)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readAllDocumentNames(DiskIndex.java:624)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:527)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:228)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:1144)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:1187)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:831)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.indexerLoop(JobManager.java:509)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
