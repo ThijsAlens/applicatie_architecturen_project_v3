@@ -27,6 +27,9 @@ public class PersonController {
 	@Autowired
 	private KlusServiceImpl klusService;
 	
+	@Autowired
+	private BiedingenServiceImpl biedingenService;
+	
 	/*
 	 * =====================================================================
 	 * algemene functies
@@ -78,7 +81,25 @@ public class PersonController {
 			
 			switch (klus.getStatus()) {
 			case BESCHIKBAAR:
+				// no klusjesmannen yet
+				html.append("<td>Nog geen klusjesmannen gevonden</td>");
+				break;
 				
+			case GEBODEN:
+				// klusjesmannen have geboden, let the klant assign one
+				// form action: /klant_index_geboden_update
+				// req.parameter: geselecteerde_klusjesmannen -> klusjesmanUsername
+				html.append("<form> action=\"/klant_index_geboden_update\" method=\"post\"");
+				html.append("<label for=\"klusjesmannen\">Selecteer een klusjesman</label>");
+				html.append("<select name=\"geselecteerde_klusjesmannen\" id=\"geselecteerde_klusjesmannen\">");
+				ArrayList<String> klusjesmannenUsernames = biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus);
+				for (String klusjesmanUsername : klusjesmannenUsernames) {
+					String key = klusjesmanUsername;
+					String rating = klusService.getRatingByKlusjesmanUsername(klusjesmanUsername) == -1 ? "nog geen" : klusService.getRatingByKlusjesmanUsername(klusjesmanUsername).toString();
+					String value = klusjesmanUsername + " (rating = " + rating;
+					html.append("<option value=\"" + key + "\">" + value + "</option>");
+				}
+				html.append("</select></form>");
 			}
 			
 		}

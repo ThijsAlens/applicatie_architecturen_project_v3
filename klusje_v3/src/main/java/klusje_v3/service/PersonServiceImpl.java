@@ -3,6 +3,8 @@ package klusje_v3.service;
 import klusje_v3.model.*;
 import klusje_v3.repository.*;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -32,4 +32,17 @@ public class KlusServiceImpl  implements KlusService{
 		return klussen;
 	}
 
+	public Float getRatingByKlusjesmanUsername(String klusjesmanUsername) {
+		ArrayList<Klus> klussen = getAllKlussen();
+		int sum = 0;
+		int count = 0;
+		for (Klus klus : klussen) {
+			if (klus.getKlusjesmanUsername() == klusjesmanUsername) {
+				sum += klus.getRating();
+				count++;
+			}
+		}
+		return (float) (count == 0 ? -1 : sum / count);
+	}
+
 }
