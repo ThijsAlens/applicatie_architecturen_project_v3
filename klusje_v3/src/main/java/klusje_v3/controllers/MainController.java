@@ -30,7 +30,7 @@ public class MainController {
 		try {
 			res.add(personService.getPersonByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).getFunctie());
 		} catch (Exception e) {
-			System.out.println("error bij het ophalen van de rol van de ingelogde gebruiker");
+			System.out.println("error bij het ophalen van de rol van de ingelogde gebruiker (geen gebruiker met gebruikersnaam " + res.get(0) + "gevonden in de db)");
 			res.add("NOT_LOGGED_IN");
 		}
 		System.out.println("username = " + res.get(0) + "\tfunctie = " + res.get(1));
