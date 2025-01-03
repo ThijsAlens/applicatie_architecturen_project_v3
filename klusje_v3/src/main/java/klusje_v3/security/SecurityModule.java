@@ -39,7 +39,7 @@ public class SecurityModule {
         auth
             .jdbcAuthentication()
             .dataSource(dataSource)
-            .usersByUsernameQuery("SELECT username, password, enabled FROM people WHERE username = ?")
+            .usersByUsernameQuery("SELECT username, password, enabled FROM person WHERE username = ?")
             .authoritiesByUsernameQuery("SELECT username, auth FROM authorities WHERE username = ?")
             .passwordEncoder(NoOpPasswordEncoder.getInstance());  // No password encoder for plain text passwords
     }
