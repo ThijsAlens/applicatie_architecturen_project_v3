@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head">
+	    <link rel="stylesheet" href="css/css.css">
+	</head>
+	<header th:fragment="header">
+	    <table>
+	        <tr>
+	            <td>
+	                <a href="/">Home</a>
+	            </td>
+				<td>
+					<p th:text=${session.name}></p>
+				</td>
+	            <td>
+	                <a href="/login">Login</a>
+	            </td>
+    	        <td>
+    	            <a href="/register_type">Registreer</a>
+				</td>
+				<td>
+					<a href="/profile">Profiel</a>
+				</td>
+    	    </tr>
+    	</table>
+		<p> welkom</p><p th:text=${session.username}></p>
+	</header>
+
+	<footer th:fragment="footer">
+    	Kopierechten van KRB.
+	</footer>
+</html>

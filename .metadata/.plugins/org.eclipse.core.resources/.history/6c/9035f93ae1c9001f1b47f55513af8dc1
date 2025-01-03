@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<div th:replace="fragments/general.html :: head"></div>
+	<div th:replace="fragments/general.html :: header"></div>
+	
+	<h1>
+	    Log in
+	</h1>
+	<p>
+		<h1>Welcome, <span th:text="${#authentication.name}">User</span>!</h1>
+	</p>
+	<form action="/login_post" method='POST'>
+	    <input type="text" id="username" name="username" placeholder="e-mail" required >
+	    <input type="text" id="password" name="password" placeholder="wachtwoord" required>
+	    <input type="submit" value="Log in">
+	</form>
+	<a href="/register_type">Nog geen account? Registreer!</a>
+	
+	<div th:replace="fragments/general.html :: footer"></div>
+</html>
