@@ -25,7 +25,7 @@ public class SecurityModule {
 	)
 	.formLogin(form -> form 
 		.loginPage("/login").permitAll()
-		//.defaultSuccessUrl("/", true)
+		.defaultSuccessUrl("/", true)
 	)
 	.logout(logout -> logout
 		.logoutSuccessUrl("/").permitAll()
