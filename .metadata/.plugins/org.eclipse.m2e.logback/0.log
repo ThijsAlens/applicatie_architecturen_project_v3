@@ -81,3 +81,6 @@
 2025-01-03 15:50:42,560 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src/main/resources to target/classes
 2025-01-03 15:50:42,562 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/thijs-alens/Documents/java_v3/klusje_v3/src/test/resources
 2025-01-03 15:52:37,880 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-01-03 16:12:45,315 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2025-01-03 16:12:45,330 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources from src/main/resources to target/classes
+2025-01-03 16:12:45,336 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/thijs-alens/Documents/java_v3/klusje_v3/src/test/resources
