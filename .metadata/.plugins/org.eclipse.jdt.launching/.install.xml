@@ -3,4 +3,5 @@
     <entry loc="/opt/sts/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.4.v20240802-1551" stamp="1729119311000"/>
     <entry loc="/opt/sts/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.4.v20240802-1551/jre" stamp="1729119311000"/>
     <entry loc="/usr/lib/jvm/java-21-openjdk-amd64" stamp="1734532399607"/>
+    <entry loc="/usr/lib/jvm/java-11-openjdk-amd64" stamp="1732264624771"/>
 </dirs>
