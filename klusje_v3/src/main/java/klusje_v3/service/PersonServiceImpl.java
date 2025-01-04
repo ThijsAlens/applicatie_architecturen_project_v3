@@ -17,4 +17,8 @@ public class PersonServiceImpl implements PersonService {
 	public Person getPersonByUsername(String username) {
 		return repo.findById(username).get();
 	}
+
+	public void updatePerson(Person p) {
+		repo.save(p);
+	}
 }

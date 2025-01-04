@@ -4,7 +4,7 @@
 xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org">
 	<head th:fragment="head">
-	    <link rel="stylesheet" href="static/style.css">
+	    <link rel="stylesheet" href="/css/style.css">
 	</head>
 	<header th:fragment="header">
 	    <table>
@@ -22,6 +22,9 @@ xmlns:th="http://www.thymeleaf.org">
 					<a href="/rest_stuff">Rest_API</a>
 				</td>
     	    </tr>
+			<tr>
+				<div th:utext="${session.header_html}"></div>
+			</tr>
     	</table>
 	</header>
 
