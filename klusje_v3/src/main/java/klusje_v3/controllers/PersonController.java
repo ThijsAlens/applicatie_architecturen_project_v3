@@ -76,8 +76,9 @@ public class PersonController {
 		html.append("<tr><td>Klus ID</td><td>Naam van de klus</td><td>Prijs</td><td>Beschrijving</td><td>status</td><td>Extra info</td></tr>");
 		for (Klus klus : klussen) {
 			html.append("<tr>");
-			// standard info for a klus
-			html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
+			if (klus.getStatus() != StatusEnum.BEOORDEELD)
+				// standard info for a klus
+				html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
 			
 			switch (klus.getStatus()) {
 			case BESCHIKBAAR:
@@ -89,6 +90,7 @@ public class PersonController {
 				// klusjesmannen have geboden, let the klant assign one
 				// form action: /klant_index_geboden_update
 				// req.parameter: geselecteerde_klusjesmannen -> klusjesmanUsername
+				html.append("<td>");
 				html.append("<form> action=\"/klant_index_geboden_update\" method=\"post\"");
 				html.append("<label for=\"klusjesmannen\">Selecteer een klusjesman</label>");
 				html.append("<select name=\"geselecteerde_klusjesmannen\" id=\"geselecteerde_klusjesmannen\">");
@@ -99,11 +101,33 @@ public class PersonController {
 					String value = klusjesmanUsername + " (rating = " + rating;
 					html.append("<option value=\"" + key + "\">" + value + "</option>");
 				}
-				html.append("</select></form>");
+				html.append("</select></form></td>");
+				break;
+				
+			case TOEGEWEZEN:
+				html.append("<td>");
+				html.append("Toegewezen aan " + klus.getKlusjesmanUsername());
+				html.append("</td>");
+				break;
+				
+			case UITGEVOERD:
+				// klusjesman has uitgevoerd, let the klant rate
+				html.append("<td>Klus is uitgevoerd:");
+				int key = klus.getKlusId();
+				html.append("<form> action=\"/klant_index_uitgevoerd_update\" method=\"post\"");
+				html.append("<input type=\"text\" id=\"rating\" name=\"rating\" placeholder=\"rating\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("</form></td>");
+				break;
+				
+			case BEOORDEELD:
+				// klus is done
+				break;
 			}
-			
+			html.append("</tr>");			
 		}
-		ses.setAttribute("klusje_in_HTML", html.toString());
+		html.append("</table>");
+		ses.setAttribute("klant_index_HTML", html.toString());
 		return "/klant/index";
 	}
 	

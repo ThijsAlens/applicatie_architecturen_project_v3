@@ -1,9 +1,9 @@
 package klusje_v3.repository;
 
+import klusje_v3.model.*;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import klusje_v3.model.Klus;
-
-public interface BiedingenRepository extends JpaRepository<String, Integer> {
+public interface BiedingenRepository extends JpaRepository<Biedingen, Integer> {
 
 }

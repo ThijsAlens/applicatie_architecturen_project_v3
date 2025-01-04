@@ -1,22 +1,32 @@
 package klusje_v3.service;
 
+import klusje_v3.model.*;
+
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import klusje_v3.model.Klus;
-import klusje_v3.model.Person;
 import klusje_v3.repository.*;
 
+@Service
 public class BiedingenServiceImpl implements BiedingenService {
 	
 	@Autowired
-	BiedingenRepository repo;
+	private BiedingenRepository repo;
+	
+	public ArrayList<Biedingen> getAllBiedingen() {
+		return (ArrayList<Biedingen>) repo.findAll();
+	}
 	
 	public ArrayList<String> getGebodenKlusjesmannenUsernameByKlus(Klus k) {
-		ArrayList<Integer> id = new ArrayList<Integer>();
-		id.add(k.getKlusId());
-		return (ArrayList<String>) repo.findAllById(id);
-		
+		ArrayList<Biedingen> allBiedingen = getAllBiedingen();
+		ArrayList<String> gebodenKlusjesmannen = new ArrayList<String>();
+		for (Biedingen bieding : allBiedingen) {
+			if (bieding.getKlusId() == k.getKlusId()) {
+				gebodenKlusjesmannen.add(bieding.getKlusjesmanUsername());
+			}
+		}
+		return gebodenKlusjesmannen;
 	}
 }
