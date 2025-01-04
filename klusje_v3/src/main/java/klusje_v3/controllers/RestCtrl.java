@@ -47,7 +47,7 @@ public class RestCtrl {
 	@PostMapping("/restNieuweKlus/{name}/{klant_username}/{prijs}/{beschrijving}")
 	public void restNieuweKlus(@PathVariable String name,@PathVariable String klant_username,@PathVariable int prijs,@PathVariable String beschrijving) {
 		
-		Person klant = personService.getPersonByUsername(klant_username)
+		Person klant = personService.getPersonByUsername(klant_username);
 		Klus k = new Klus(name,klant,prijs,beschrijving);
 		klusService.addKlus(k);
 		
