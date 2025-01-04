@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
@@ -48,6 +49,8 @@ public class Klus {
     @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME")
     private Person klusjesman;
 
+    @Min(0)
+    @Max(10)
     @Column(name = "RATING")
     private Integer rating;
 

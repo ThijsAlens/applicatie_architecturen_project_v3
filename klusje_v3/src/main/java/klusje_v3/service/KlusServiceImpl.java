@@ -86,4 +86,8 @@ public class KlusServiceImpl  implements KlusService{
 		return gefilterdeKlussen;
 	}
 
+	public void deleteKlusById(int klusId) {
+		repo.deleteById(klusId);
+	}
+
 }

@@ -91,8 +91,15 @@ public class PersonController {
 			
 			switch (klus.getStatus()) {
 			case BESCHIKBAAR:
-				// no klusjesmannen yet
-				html.append("<td>Nog geen klusjesmannen gevonden</td>");
+				// no klusjesmannen yet, let the klant delete it
+				// form action: /klant_index_beschikbaar_delete
+				// req.parameter: key -> klusId
+				html.append("<td>");
+				int key = klus.getKlusId();
+				html.append("<form action=\"/klant_index_beschikbaar_delete\" method=\"post\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("<input type=\"submit\" value=\"Verwijder klus\">");
+				html.append("</form></td>");
 				break;
 				
 			case GEBODEN:
@@ -109,7 +116,7 @@ public class PersonController {
 					System.out.println("geboden klusjesmannen: " + klusjesmannenUsernames.toString());
 					String key1 = klusjesmanUsername;
 					String rating = klusService.getRatingByKlusjesmanUsername(klusjesmanUsername) == -1 ? "nog geen" : klusService.getRatingByKlusjesmanUsername(klusjesmanUsername).toString();
-					String value = klusjesmanUsername + " (rating = " + rating + ")";
+					String value = klusjesmanUsername + " (rating van " + rating + " op 10)";
 					html.append("<option value=\"" + key1 + "\">" + value + "</option>");
 				}
 				html.append("</select>");
@@ -160,6 +167,12 @@ public class PersonController {
 		return "/klant/index";
 	}
 
+	@PostMapping("/klant_index_beschikbaar_delete")
+	public String klant_index_beschikbaar_delete(HttpServletRequest req) {
+		int klusId = Integer.parseInt(req.getParameter("key").toString());
+		klusService.deleteKlusById(klusId);
+		return "redirect:/klant/index";
+	}
 	
 	@PostMapping ("/klant_index_geboden_update")
 	public String klant_index_geboden_update(HttpServletRequest req, HttpSession ses) {
