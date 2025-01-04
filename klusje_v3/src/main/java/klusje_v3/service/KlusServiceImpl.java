@@ -1,5 +1,7 @@
 package klusje_v3.service;
 
+import klusje_v3.model.*;
+
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +27,14 @@ public class KlusServiceImpl  implements KlusService{
 
 	public ArrayList<Klus> getAllKlussenByKlantUsername(String username) {
 		ArrayList<Klus> klussen = getAllKlussen();
+		ArrayList<Klus> gefilterdeKlussen = new ArrayList<Klus>();
 		for (Klus klus : klussen) {
+			System.out.println("username klant gevraagt= " + username);
+			System.out.println("username klant in klus= " + klus.getKlant().getUsername());
 			if (klus.getKlant().getUsername().equals(username))
-				klussen.remove(klus);
+				gefilterdeKlussen.add(klus);
 		}
-		return klussen;
+		return gefilterdeKlussen;
 	}
 
 	public Float getRatingByKlusjesmanUsername(String klusjesmanUsername) {
@@ -37,6 +42,8 @@ public class KlusServiceImpl  implements KlusService{
 		int sum = 0;
 		int count = 0;
 		for (Klus klus : klussen) {
+			if (klus.getStatus() != StatusEnum.BEOORDEELD)
+				continue;
 			if (klus.getKlusjesman().getUsername().equals(klusjesmanUsername)) {
 				sum += klus.getRating();
 				count++;
@@ -50,7 +57,6 @@ public class KlusServiceImpl  implements KlusService{
 	}
 
 	public void updateKlus(Klus k) {
-		repo.deleteById(k.getKlusId());
 		repo.save(k);
 	}
 

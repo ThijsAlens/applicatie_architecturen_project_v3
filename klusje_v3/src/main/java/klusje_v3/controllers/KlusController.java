@@ -1,6 +1,5 @@
 package klusje_v3.controllers;
 
-import klusje_v3.controllers.MainController;
 import klusje_v3.model.*;
 import klusje_v3.service.*;
 
@@ -37,11 +36,12 @@ public class KlusController {
 		String name = req.getParameter("name").toString();
 		String beschrijving = req.getParameter("beschrijving").toString();
 		int prijs = Integer.parseInt(req.getParameter("prijs").toString());
-		String klantUsername = getUserInfo().get(1);
-		
-		Klus klus = new Klus(name, klantUsername, prijs, beschrijving);
+		String klantUsername = getUserInfo().get(0);
+		System.out.println("name = " + name + " beschrijving = " + beschrijving + " prijs = " + prijs + " klantUsername = " + klantUsername);
+		Klus klus = new Klus(name, personService.getPersonByUsername(klantUsername), prijs, beschrijving);
 		
 		klusService.addKlus(klus);
+		ses.setAttribute("nieuw_klusje_status", "nieuw klusje aangemaakt");
 		
 		return "redirect:/klant/index";
 	}

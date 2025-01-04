@@ -66,7 +66,6 @@ public class PersonController {
 		StringBuilder html = new StringBuilder();
 		
 		ArrayList<Klus> klussen = klusService.getAllKlussenByKlantUsername(getUserInfo().get(0));
-		
 		if (klussen.size() == 0) {
 			html.append("<p>U heeft nog geen klussen gemaakt.</p>");
 			return "/klant/index";
@@ -75,6 +74,7 @@ public class PersonController {
 		html.append("<table>");
 		html.append("<tr><td>Klus ID</td><td>Naam van de klus</td><td>Prijs</td><td>Beschrijving</td><td>status</td><td>Extra info</td></tr>");
 		for (Klus klus : klussen) {
+			System.out.println("klus die bekeken wordt: " + klus.getName());
 			html.append("<tr>");
 			if (klus.getStatus() != StatusEnum.BEOORDEELD)
 				// standard info for a klus
@@ -92,19 +92,21 @@ public class PersonController {
 				// req.parameter: geselecteerde_klusjesman -> klusjesmanUsername
 				// req.parameter: key -> klusId
 				html.append("<td>");
-				html.append("<form> action=\"/klant_index_geboden_update\" method=\"post\"");
-				html.append("<label for=\"klusjesmannen\">Selecteer een klusjesman</label>");
+				html.append("<form action=\"/klant_index_geboden_update\" method=\"post\">");
+				html.append("<label for=\"klusjesmannen\">Selecteer een klusjesman\t</label>");
 				html.append("<select name=\"geselecteerde_klusjesman\" id=\"geselecteerde_klusjesman\">");
 				ArrayList<String> klusjesmannenUsernames = biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus);
 				for (String klusjesmanUsername : klusjesmannenUsernames) {
+					System.out.println("geboden klusjesmannen: " + klusjesmannenUsernames.toString());
 					String key = klusjesmanUsername;
 					String rating = klusService.getRatingByKlusjesmanUsername(klusjesmanUsername) == -1 ? "nog geen" : klusService.getRatingByKlusjesmanUsername(klusjesmanUsername).toString();
-					String value = klusjesmanUsername + " (rating = " + rating;
+					String value = klusjesmanUsername + " (rating = " + rating + ")";
 					html.append("<option value=\"" + key + "\">" + value + "</option>");
 				}
 				html.append("</select>");
 				int key = klus.getKlusId();
 				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("<input type=\"submit\" value=\"Wijs toe\">");
 				html.append("</form></td>");
 				break;
 				
@@ -121,9 +123,10 @@ public class PersonController {
 				// req.parameter: key -> klusId
 				html.append("<td>Klus is uitgevoerd:");
 				int key2 = klus.getKlusId();
-				html.append("<form> action=\"/klant_index_uitgevoerd_update\" method=\"post\"");
+				html.append("<form action=\"/klant_index_uitgevoerd_update\" method=\"post\">");
 				html.append("<input type=\"text\" id=\"rating\" name=\"rating\" placeholder=\"rating\">");
 				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key2 + "\">");
+				html.append("<input type=\"submit\" value=\"Beoordeel klus\">");
 				html.append("</form></td>");
 				break;
 				
@@ -137,16 +140,7 @@ public class PersonController {
 		ses.setAttribute("klant_index_HTML", html.toString());
 		return "/klant/index";
 	}
-	
-	
-	
-	@PostMapping ("/nieuw_klusje")
-	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
-		Klus k = new Klus(req.getParameter("name").toString(), personService.getPersonByUsername(getUserInfo().get(0)), Integer.parseInt(req.getParameter("prijs").toString()), req.getParameter("beschrijving").toString());
-		klusService.addKlus(k);
-		ses.setAttribute("nieuw_klusje_status", "nieuw klusje aangemaakt");
-		return "redirect:/klant/index";
-	}
+
 	
 	@PostMapping ("/klant_index_geboden_update")
 	public String klant_index_geboden_update(HttpServletRequest req, HttpSession ses) {
@@ -165,6 +159,7 @@ public class PersonController {
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Klus k = klusService.getKlusById(klusId);
 		k.setRating(rating);
+		System.out.println("na set rating");
 		k.setStatus(StatusEnum.BEOORDEELD);
 		klusService.updateKlus(k);
 		return "redirect:/klant/index";

@@ -17,9 +17,7 @@
     </div>
 	<div>
 		<h2>Openstaande klusjes</h2>
-		<form action="/klant_update_klusjes" method="post">
-			<span th:text="${klant_index_HTML}"></span>
-		</form>
+		<div th:utext="${session.klant_index_HTML}"></div>
 	</div>
 	
     <div th:replace="fragments/general.html :: footer"></div>

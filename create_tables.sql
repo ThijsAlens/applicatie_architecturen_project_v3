@@ -52,23 +52,29 @@ CREATE TABLE biedingen (
     FOREIGN KEY (KLUSJESMAN_USERNAME) REFERENCES person (USERNAME)
 );
 
-INSERT INTO person (USERNAME, PASSWORD, VOORNAAM, ACHTERNAAM,FUNCTIE,ENABLED) VALUES ('stijn', 'cool', 'Stijn', 'Is cool','KLUSJESMAN','1');
-INSERT INTO person (USERNAME, PASSWORD, VOORNAAM, ACHTERNAAM,FUNCTIE,ENABLED) VALUES ('thijs', 'leuk', 'Stijn', 'Is cool','KLANT','1');
+-- Inserting sample data
+INSERT INTO person (USERNAME, PASSWORD, VOORNAAM, ACHTERNAAM,FUNCTIE,ENABLED) 
+VALUES 
+    ('stijn', 'cool', 'Stijn', 'Is cool', 'KLUSJESMAN', '1'),
+    ('thijs', 'leuk', 'Stijn', 'Is cool', 'KLANT', '1');
 
 INSERT INTO klus (NAME, KLANT_USERNAME, PRIJS, BESCHRIJVING, STATUS)
-VALUES ('knuffel komen geven','thijs' , 0, 'ZEER DRINGEND!', 'GEBODEN');
-
-INSERT INTO klus (NAME, KLANT_USERNAME, PRIJS, BESCHRIJVING, STATUS)
-VALUES ('kusje komen geven','thijs' , 0, 'ZEER DRINGEND!', 'BESCHIKBAAR');
+VALUES 
+    ('knuffel komen geven','thijs', 0, 'ZEER DRINGEND!', 'GEBODEN'),
+    ('kusje komen geven','thijs', 0, 'ZEER DRINGEND!', 'BESCHIKBAAR');
+    
+INSERT INTO klus (NAME, KLANT_USERNAME, PRIJS, BESCHRIJVING, STATUS, KLUSJESMAN_USERNAME)
+VALUES 
+    ('thijs helpen','thijs', 0, 'niet al te dringend', 'UITGEVOERD', 'stijn');
 
 INSERT INTO biedingen (KLUS_ID, KLUSJESMAN_USERNAME)
-VALUES ((SELECT KLUS_ID FROM klus WHERE NAME = 'knuffel komen geven'),'stijn');
+VALUES 
+    ((SELECT KLUS_ID FROM klus WHERE NAME = 'knuffel komen geven'), 'stijn');
 
-INSERT INTO authorities (USERNAME,AUTH) VALUES ('stijn','ADMIN');
-INSERT INTO authorities (USERNAME,AUTH) VALUES ('thijs','USER');
-
-
-INSERT INTO authorities (USERNAME,AUTH) VALUES ('stijn','KLUSJESMAN');
-INSERT INTO authorities (USERNAME,AUTH) VALUES ('thijs','KLANT');
-
+INSERT INTO authorities (USERNAME, AUTH) 
+VALUES 
+    ('stijn', 'ADMIN'),
+    ('thijs', 'USER'),
+    ('stijn', 'KLUSJESMAN'),
+    ('thijs', 'KLANT');
 

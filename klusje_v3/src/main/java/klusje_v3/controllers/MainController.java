@@ -40,9 +40,9 @@ public class MainController {
 	@GetMapping("/")
 	public String index() {
 		if (getUserInfo().get(1).equals("KLANT")) {
-			return "/klant/index";
+			return "forward:/klant/index";
 		} else if (getUserInfo().get(1).equals("KLUSJESMAN")) {
-			return "/klusjesman/index";
+			return "forward:/klusjesman/index";
 		}
 		return "index";
 	}

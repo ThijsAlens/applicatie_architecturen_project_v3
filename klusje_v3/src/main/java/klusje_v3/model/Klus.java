@@ -28,7 +28,7 @@ public class Klus {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "KLANT_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    @JoinColumn(name = "KLANT_USERNAME", referencedColumnName = "USERNAME")
     private Person klant;
 
     @NotNull
@@ -45,7 +45,7 @@ public class Klus {
     private StatusEnum status;
 
     @ManyToOne
-    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME")
     private Person klusjesman;
 
     @Column(name = "RATING")
