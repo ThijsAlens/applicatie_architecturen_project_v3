@@ -26,7 +26,7 @@ public class KlusServiceImpl  implements KlusService{
 	public ArrayList<Klus> getAllKlussenByKlantUsername(String username) {
 		ArrayList<Klus> klussen = getAllKlussen();
 		for (Klus klus : klussen) {
-			if (klus.getKlantUsername().equals(username))
+			if (klus.getKlant().getUsername().equals(username))
 				klussen.remove(klus);
 		}
 		return klussen;
@@ -37,7 +37,7 @@ public class KlusServiceImpl  implements KlusService{
 		int sum = 0;
 		int count = 0;
 		for (Klus klus : klussen) {
-			if (klus.getKlusjesmanUsername() == klusjesmanUsername) {
+			if (klus.getKlusjesman().getUsername().equals(klusjesmanUsername)) {
 				sum += klus.getRating();
 				count++;
 			}
