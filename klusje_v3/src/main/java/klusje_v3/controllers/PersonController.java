@@ -90,9 +90,7 @@ public class PersonController {
 				html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
 			
 			switch (klus.getStatus()) {
-			case BESCHIKBAAR:				
-			case GEBODEN:
-				
+			case BESCHIKBAAR:	
 				// geen klusjesmannen is al gekozen, laat de klant de klus verwijderen
 				// form action: /klant_index_beschikbaar_delete
 				// req.parameter: key -> klusId
@@ -100,6 +98,18 @@ public class PersonController {
 				int key = klus.getKlusId();
 				html.append("<form action=\"/klant_index_beschikbaar_delete\" method=\"post\">");
 				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("<input type=\"submit\" value=\"Verwijder klus\">");
+				html.append("</form>");
+				break;
+				
+			case GEBODEN:
+				// geen klusjesmannen is al gekozen, laat de klant de klus verwijderen
+				// form action: /klant_index_beschikbaar_delete
+				// req.parameter: key -> klusId
+				html.append("<td>");
+				int key7 = klus.getKlusId();
+				html.append("<form action=\"/klant_index_beschikbaar_delete\" method=\"post\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key7 + "\">");
 				html.append("<input type=\"submit\" value=\"Verwijder klus\">");
 				html.append("</form>");
 				
@@ -171,6 +181,7 @@ public class PersonController {
 	public String klant_index_beschikbaar_delete(HttpServletRequest req) {
 		// methode die de actie "/klant_index_beschikbaar_delete" verwerkt (opgeroepen uit PersonController.klant_index)
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
+		biedingenService.removeBiedingenByKlusId(klusId);
 		klusService.deleteKlusById(klusId);
 		return "redirect:/klant/index";
 	}
