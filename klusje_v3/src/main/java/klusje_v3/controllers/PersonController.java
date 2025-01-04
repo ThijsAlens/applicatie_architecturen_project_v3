@@ -110,7 +110,7 @@ public class PersonController {
 				
 			case TOEGEWEZEN:
 				html.append("<td>");
-				html.append("Toegewezen aan " + klus.getKlusjesmanUsername());
+				html.append("Toegewezen aan " + klus.getKlusjesman().getUsername());
 				html.append("</td>");
 				break;
 				
@@ -142,7 +142,7 @@ public class PersonController {
 	
 	@PostMapping ("/nieuw_klusje")
 	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
-		Klus k = new Klus(req.getParameter("name").toString(), getUserInfo().get(0), Integer.parseInt(req.getParameter("prijs").toString()), req.getParameter("beschrijving").toString());
+		Klus k = new Klus(req.getParameter("name").toString(), personService.getPersonByUsername(getUserInfo().get(0)), Integer.parseInt(req.getParameter("prijs").toString()), req.getParameter("beschrijving").toString());
 		klusService.addKlus(k);
 		ses.setAttribute("nieuw_klusje_status", "nieuw klusje aangemaakt");
 		return "redirect:/klant/index";
@@ -153,7 +153,7 @@ public class PersonController {
 		String selectedKlusjesmanUsername = req.getParameter("geselecteerde_klusjesman").toString();
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Klus k = klusService.getKlusById(klusId);
-		k.setKlusjesmanUsername(selectedKlusjesmanUsername);
+		k.setKlusjesman(personService.getPersonByUsername(selectedKlusjesmanUsername));
 		klusService.updateKlus(k);
 		return "redirect:/klant/index";
 	}

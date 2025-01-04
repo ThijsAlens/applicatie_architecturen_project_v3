@@ -50,129 +50,85 @@ public class Klus {
 
     @Column(name = "RATING")
     private Integer rating;
-    
 
-
-    
-    public Klus() {
-    	
-    }
-
-
-	public Klus(@NotNull String name, @NotNull Person klant, @NotNull @Min(0) Integer prijs, String beschrijving,
-			@NotNull StatusEnum status, Person klusjesman, Integer rating) {
-		super();
-		this.name = name;
-		this.klant = klant;
-		this.prijs = prijs;
-		this.beschrijving = beschrijving;
-		this.status = status;
-		this.klusjesman = klusjesman;
-		this.rating = rating;
+	public int getKlusId() {
+		return klusId;
 	}
 
-
-
+	public void setKlusId(int klusId) {
+		this.klusId = klusId;
+	}
 
 	public String getName() {
 		return name;
 	}
 
-
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
-
 
 	public Person getKlant() {
 		return klant;
 	}
 
-
-
-
 	public void setKlant(Person klant) {
 		this.klant = klant;
 	}
-
-
-
 
 	public Integer getPrijs() {
 		return prijs;
 	}
 
-
-
-
 	public void setPrijs(Integer prijs) {
 		this.prijs = prijs;
 	}
-
-
-
 
 	public String getBeschrijving() {
 		return beschrijving;
 	}
 
-
-
-
 	public void setBeschrijving(String beschrijving) {
 		this.beschrijving = beschrijving;
 	}
-
-
-
 
 	public StatusEnum getStatus() {
 		return status;
 	}
 
-
-
-
 	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
-
-
-
 
 	public Person getKlusjesman() {
 		return klusjesman;
 	}
 
-
-
-
 	public void setKlusjesman(Person klusjesman) {
 		this.klusjesman = klusjesman;
 	}
-
-
-
 
 	public Integer getRating() {
 		return rating;
 	}
 
-
-
-
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
-    
 
+	public Klus() {
+		super();
+	}
 
-    
-    
+	public Klus(@NotNull String name, @NotNull Person klant, @NotNull @Min(0) Integer prijs, String beschrijving) {
+		super();
+		this.name = name;
+		this.klant = klant;
+		this.prijs = prijs;
+		this.beschrijving = beschrijving;
+		this.status = StatusEnum.BESCHIKBAAR;
+		this.klusjesman = null;
+		this.rating = null;
+	}
     
 }
 
