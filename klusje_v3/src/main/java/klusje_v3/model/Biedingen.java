@@ -40,6 +40,14 @@ public class Biedingen {
 		this.klus = klus;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Person getKlusjesman() {
 		return klusjesman;
 	}

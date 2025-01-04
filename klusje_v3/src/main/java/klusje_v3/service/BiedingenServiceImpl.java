@@ -29,4 +29,13 @@ public class BiedingenServiceImpl implements BiedingenService {
 		}
 		return gebodenKlusjesmannen;
 	}
+
+	public void removeBiedingenByKlusId(int klusId) {
+		ArrayList<Biedingen> biedingen = getAllBiedingen();
+		for (Biedingen bieding : biedingen) {
+			if (bieding.getKlus().getKlusId() == klusId) {
+				repo.deleteById(bieding.getId());
+			}
+		}
+	}
 }

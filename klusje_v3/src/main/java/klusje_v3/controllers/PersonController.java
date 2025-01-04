@@ -150,6 +150,7 @@ public class PersonController {
 		k.setKlusjesman(personService.getPersonByUsername(selectedKlusjesmanUsername));
 		k.setStatus(StatusEnum.TOEGEWEZEN);
 		klusService.updateKlus(k);
+		biedingenService.removeBiedingenByKlusId(k.getKlusId());
 		return "redirect:/klant/index";
 	}
 	
