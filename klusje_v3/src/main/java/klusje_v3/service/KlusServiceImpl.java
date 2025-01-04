@@ -39,7 +39,7 @@ public class KlusServiceImpl  implements KlusService{
 
 	public Float getRatingByKlusjesmanUsername(String klusjesmanUsername) {
 		ArrayList<Klus> klussen = getAllKlussen();
-		int sum = 0;
+		float sum = 0;
 		int count = 0;
 		for (Klus klus : klussen) {
 			if (klus.getStatus() != StatusEnum.BEOORDEELD)
@@ -49,7 +49,7 @@ public class KlusServiceImpl  implements KlusService{
 				count++;
 			}
 		}
-		return (float) (count == 0 ? -1 : sum / count);
+		return (count == 0 ? -1 : (sum/count));
 	}
 
 	public Klus getKlusById(int klusId) {
