@@ -21,4 +21,10 @@ public class PersonServiceImpl implements PersonService {
 	public void updatePerson(Person p) {
 		repo.save(p);
 	}
+	
+	@Override
+	public void addPerson(Person p) {
+		p.setEnabled(true);
+		repo.save(p);
+	}
 }

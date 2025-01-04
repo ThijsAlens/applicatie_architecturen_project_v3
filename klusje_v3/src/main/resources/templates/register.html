@@ -5,17 +5,30 @@
 	<div th:replace="fragments/general.html :: head"></div>
 	<div th:replace="fragments/general.html :: header"></div>
 	
-	<form th:action="@{/register_post}" th:object="${new_person}" method='POST'>
-	    <input type="text" id="username" name="username" th:field="*{username}" placeholder="gebruikersnaam" required > <span th:errors="*{username}">
-	    <input type="text" id="password" name="password" th:field="*{password}" placeholder="wachtwoord" required> <span th:errors="*{password}">
-		<input type="text" id="voornaam" name="voornaam" th:field="*{voornaam}" placeholder="voornaam" required > <span th:errors="*{voornaam}">
-		<input type="text" id="achternaam" name="achternaam" th:field="*{achternaam}" placeholder="achternaam" required> <span th:errors="*{achternaam}">
-		<label for="functie">Kies een functie:</label>
-		    <select id="functie" name="functie" th:field="*{functie}">
-		      <option value="KLANT">klant</option>
-		      <option value="KLUSJESMAN">klusjesman</option>
-		    </select>
-	    <input type="submit" value="registreer">
-	</form>
-	<div th:replace="fragments/general.html :: footer"></div>
+   <h1>register</h1>
+
+    <form th:object="${new_person}" th:action="@{register_post}" method="post">
+		
+        <label for="username">Name:</label>
+        <input th:field="*{username}" type="text" id="username" name="username"><span th:errors="*{username}" /><br>
+		
+        <label  for="password">password</label>
+        <input th:field="*{password}" type="password" id="password" name="password"><span th:errors="*{password}"/><br>
+		
+        <label  for="voornaam">Vooraam:</label>
+        <input th:field="*{voornaam}" type="text" id="voornaam" name="voornaam"><span th:errors="*{voornaam}" /><br>
+		
+		<label for="achternaam">Achternaam</label>
+		<input th:field="*{achternaam}"  type="achternaam" id="achternaam" name="achternaam"><span th:errors="*{achternaam}" /><br> 
+		
+		<select id="functie" name="functie" th:field="*{functie}">
+		  <option value="KLANT">klant</option>
+		  <option value="KLUSJESMAN">klusjesman</option>
+		</select>
+		
+		
+        <input type="submit" value="Submit">          
+      </form > 
+
+<div th:replace="fragments/general :: footer">...</div>
 </html>

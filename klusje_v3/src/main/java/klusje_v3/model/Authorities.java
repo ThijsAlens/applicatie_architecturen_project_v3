@@ -13,50 +13,43 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "authorities")
 public class Authorities {
-	
-	// klasse die overeenkomt met de authorities tabel
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotBlank
     @Column(name = "ID")
     private int id;
-    
-    @ManyToOne
-    @JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
-    private Person username;
-    
+
+    @NotBlank
+    @Column(name = "USERNAME")
+    private String username;  // Store the username as a String
+
     @NotBlank
     @Column(name = "AUTH")
     private String auth;
 
-	public Authorities() {
-		super();
-	}
+    public Authorities() {}
 
-	public Authorities(@NotBlank Person username, @NotBlank String auth) {
-		this.username = username;
-		this.auth = auth;
-	}
+    public Authorities(String username, String auth) {
+        this.username = username;
+        this.auth = auth;
+    }
 
-	public Person getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUsername(Person username) {
-		this.username = username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getAuth() {
-		return auth;
-	}
+    public String getAuth() {
+        return auth;
+    }
 
-	public void setAuth(String auth) {
-		this.auth = auth;
-	}
-    
-	
-	
-    
-    
+    public void setAuth(String auth) {
+        this.auth = auth;
+    }
 }
+
+
+

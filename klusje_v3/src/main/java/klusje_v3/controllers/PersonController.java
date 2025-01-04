@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -27,6 +28,9 @@ public class PersonController {
 	
 	@Autowired
 	private KlusServiceImpl klusService;
+	
+	@Autowired
+	private AuthoritiesServiceImpl authService; 
 	
 	@Autowired
 	private BiedingenServiceImpl biedingenService;
@@ -54,12 +58,25 @@ public class PersonController {
 	}
 	
 	@PostMapping("/register_post")
-	public String register_post(Model mod, HttpSession ses, HttpServletRequest req, @ModelAttribute("new_person") @Valid Person costumer, Errors e) {
-		// methode die de actie "/register_post" verwerkt (opgeroepen uit resources.templates.register)
-		if (e.hasErrors())
-			return "register";
-		else
+	public String register_post(Model mod, HttpSession ses, HttpServletRequest req,  @ModelAttribute("new_person") @Valid Person customer, Errors e) {
+		// Check for validation errors
+		if (e.hasErrors()) {
+			return "register";  
+		} else {
+			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+			String encryptedPassword = passwordEncoder.encode(customer.getPassword());
+			customer.setPassword(encryptedPassword);  
+			
+			ses.setAttribute("user", customer);
+			personService.addPerson(customer);
+			System.out.println();
+			System.out.println();
+			System.out.println(customer);
+			System.out.println(customer.getFunctie());
+			authService.addRole(customer, customer.getFunctie());
+
 			return "redirect:/";
+		}
 	}
 	
 	/*

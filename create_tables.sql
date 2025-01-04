@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS person;
 
 CREATE TABLE person (
     USERNAME VARCHAR(50) NOT NULL,
-    PASSWORD VARCHAR(50) NOT NULL,
+    PASSWORD VARCHAR(100) NOT NULL,
     VOORNAAM VARCHAR(50),
     ACHTERNAAM VARCHAR(50),
     FUNCTIE VARCHAR(50) NOT NULL,
@@ -55,8 +55,8 @@ CREATE TABLE biedingen (
 -- Inserting sample data
 INSERT INTO person (USERNAME, PASSWORD, VOORNAAM, ACHTERNAAM,FUNCTIE,ENABLED) 
 VALUES 
-    ('stijn', 'cool', 'Stijn', 'Is cool', 'KLUSJESMAN', '1'),
-    ('thijs', 'leuk', 'Stijn', 'Is cool', 'KLANT', '1');
+    ('stijn', '$2a$12$uOOvNz00aXAzcIzWnfMzd.g1P2n6pof./QTSG4Kh8tijxjFsAQnTK', 'Stijn', 'Is cool', 'KLUSJESMAN', '1'),
+    ('thijs', '$2a$12$MdFFQSIRvDEiqNcWi3ebXu0qLVs950ZhUFXy4dm9h4.d2gPoGNu36', 'Stijn', 'Is cool', 'KLANT', '1');
 
 INSERT INTO klus (NAME, KLANT_USERNAME, PRIJS, BESCHRIJVING, STATUS)
 VALUES 
