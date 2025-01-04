@@ -1,59 +1,56 @@
 package klusje_v3.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
 
-@Entity
 public class Biedingen {
 	
-	@Id
-	@Column(name = "ID")
-	private int id;
-
-	@ManyToOne
-    @JoinColumn(name = "KLUS_ID")
-    private int klusId;
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotBlank
+    @Column(name = "ID")
+    private int id;
+    
+    @ManyToOne
+    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    private Person klusjesman;
 
     @ManyToOne
-    @JoinColumn(name = "KLUSJESMAN_USERNAME")
-    private String klusjesmanUsername;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getKlusId() {
-		return klusId;
-	}
-
-	public void setKlusId(int klusId) {
-		this.klusId = klusId;
-	}
-
-	public String getKlusjesmanUsername() {
-		return klusjesmanUsername;
-	}
-
-	public void setKlusjesmanUsername(String klusjesmanUsername) {
-		this.klusjesmanUsername = klusjesmanUsername;
-	}
+    @JoinColumn(name = "KLUS_ID", referencedColumnName = "KLUS_ID", insertable = false, updatable = false)
+    private Klus klus;
 
 	public Biedingen() {
 		super();
 	}
 
-	public Biedingen(int id, int klusId, String klusjesmanUsername) {
+	public Biedingen( Person klusjesman, Klus klus) {
 		super();
-		this.id = id;
-		this.klusId = klusId;
-		this.klusjesmanUsername = klusjesmanUsername;
+
+		this.klusjesman = klusjesman;
+		this.klus = klus;
 	}
+
+	public Person getKlusjesman() {
+		return klusjesman;
+	}
+
+	public void setKlusjesman(Person klusjesman) {
+		this.klusjesman = klusjesman;
+	}
+
+	public Klus getKlus() {
+		return klus;
+	}
+
+	public void setKlus(Klus klus) {
+		this.klus = klus;
+	}
+    
 
 }

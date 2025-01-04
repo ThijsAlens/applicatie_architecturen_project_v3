@@ -7,6 +7,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -18,15 +20,16 @@ public class Klus {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "KLUS_ID")
-    private Integer klusId;
+    private int klusId;
 
     @NotNull
     @Column(name = "NAME")
     private String name;
 
     @NotNull
-    @Column(name = "KLANT_USERNAME")
-    private String klantUsername;
+    @ManyToOne
+    @JoinColumn(name = "KLANT_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    private Person klant;
 
     @NotNull
     @Min(0)
@@ -41,89 +44,133 @@ public class Klus {
     @Column(name = "STATUS")
     private StatusEnum status;
 
-    @Column(name = "KLUSJESMAN_USERNAME")
-    private String klusjesmanUsername;
+    @ManyToOne
+    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    private Person klusjesman;
 
     @Column(name = "RATING")
     private Integer rating;
     
+
+
+    
     public Klus() {
     	
     }
-    
-    public Klus(String name, String klantUsername, int prijs, String beschrijving) {
+
+
+	public Klus(@NotNull String name, @NotNull Person klant, @NotNull @Min(0) Integer prijs, String beschrijving,
+			@NotNull StatusEnum status, Person klusjesman, Integer rating) {
+		super();
 		this.name = name;
-		this.klantUsername = klantUsername;
+		this.klant = klant;
 		this.prijs = prijs;
 		this.beschrijving = beschrijving;
-		this.status = StatusEnum.BESCHIKBAAR;
-		this.klusjesmanUsername = null;
-		this.rating = null;
+		this.status = status;
+		this.klusjesman = klusjesman;
+		this.rating = rating;
 	}
 
-	public Integer getKlusId() {
-		return klusId;
-	}
 
-	public void setKlusId(Integer klusId) {
-		this.klusId = klusId;
-	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getKlantUsername() {
-		return klantUsername;
+
+
+
+	public Person getKlant() {
+		return klant;
 	}
 
-	public void setKlantUsername(String klantUsername) {
-		this.klantUsername = klantUsername;
+
+
+
+	public void setKlant(Person klant) {
+		this.klant = klant;
 	}
+
+
+
 
 	public Integer getPrijs() {
 		return prijs;
 	}
 
+
+
+
 	public void setPrijs(Integer prijs) {
 		this.prijs = prijs;
 	}
+
+
+
 
 	public String getBeschrijving() {
 		return beschrijving;
 	}
 
+
+
+
 	public void setBeschrijving(String beschrijving) {
 		this.beschrijving = beschrijving;
 	}
+
+
+
 
 	public StatusEnum getStatus() {
 		return status;
 	}
 
+
+
+
 	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
 
-	public String getKlusjesmanUsername() {
-		return klusjesmanUsername;
+
+
+
+	public Person getKlusjesman() {
+		return klusjesman;
 	}
 
-	public void setKlusjesmanUsername(String klusjesmanUsername) {
-		this.klusjesmanUsername = klusjesmanUsername;
+
+
+
+	public void setKlusjesman(Person klusjesman) {
+		this.klusjesman = klusjesman;
 	}
+
+
+
 
 	public Integer getRating() {
 		return rating;
 	}
 
+
+
+
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
+    
+
+
     
     
     
