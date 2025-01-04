@@ -23,8 +23,8 @@ public class BiedingenServiceImpl implements BiedingenService {
 		ArrayList<Biedingen> allBiedingen = getAllBiedingen();
 		ArrayList<String> gebodenKlusjesmannen = new ArrayList<String>();
 		for (Biedingen bieding : allBiedingen) {
-			if (bieding.getKlusId() == k.getKlusId()) {
-				gebodenKlusjesmannen.add(bieding.getKlusjesmanUsername());
+			if (bieding.getKlus().equals(k)) {
+				gebodenKlusjesmannen.add(bieding.getKlusjesman().getUsername());
 			}
 		}
 		return gebodenKlusjesmannen;
