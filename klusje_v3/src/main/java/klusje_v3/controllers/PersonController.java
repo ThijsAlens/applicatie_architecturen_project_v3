@@ -154,12 +154,19 @@ public class PersonController {
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Klus k = klusService.getKlusById(klusId);
 		k.setKlusjesman(personService.getPersonByUsername(selectedKlusjesmanUsername));
+		k.setStatus(StatusEnum.TOEGEWEZEN);
 		klusService.updateKlus(k);
 		return "redirect:/klant/index";
 	}
 	
 	@PostMapping ("/klant_index_uitgevoerd_update")
-	public String klant_index_uitgevoerd_update() {
-		return "";
+	public String klant_index_uitgevoerd_update(HttpServletRequest req, HttpSession ses) {
+		int rating = Integer.parseInt(req.getParameter("rating").toString());
+		int klusId = Integer.parseInt(req.getParameter("key").toString());
+		Klus k = klusService.getKlusById(klusId);
+		k.setRating(rating);
+		k.setStatus(StatusEnum.BEOORDEELD);
+		klusService.updateKlus(k);
+		return "redirect:/klant/index";
 	}
 }
