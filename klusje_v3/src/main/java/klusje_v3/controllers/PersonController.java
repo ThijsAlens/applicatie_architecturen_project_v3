@@ -152,8 +152,10 @@ public class PersonController {
 	public String klant_index_geboden_update(HttpServletRequest req, HttpSession ses) {
 		String selectedKlusjesmanUsername = req.getParameter("geselecteerde_klusjesman").toString();
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
-		klusService.getKlusById(klusId);
-		return "";
+		Klus k = klusService.getKlusById(klusId);
+		k.setKlusjesmanUsername(selectedKlusjesmanUsername);
+		klusService.updateKlus(k);
+		return "redirect:/klant/index";
 	}
 	
 	@PostMapping ("/klant_index_uitgevoerd_update")

@@ -46,7 +46,12 @@ public class KlusServiceImpl  implements KlusService{
 	}
 
 	public Klus getKlusById(int klusId) {
-		return repo.getById(klusId);
+		return repo.findById(klusId).get();
+	}
+
+	public void updateKlus(Klus k) {
+		repo.deleteById(k.getKlusId());
+		repo.save(k);
 	}
 
 }
