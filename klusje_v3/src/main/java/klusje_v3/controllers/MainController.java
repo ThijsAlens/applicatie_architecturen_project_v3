@@ -11,9 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.client.RestTemplate;
-
-import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
@@ -27,9 +24,11 @@ public class MainController {
 	private KlusServiceImpl klusService;
 	
 	public String create_header_html(HttpSession ses) {
+		// methode die de html dynamisch opmaakt voor de header
 		StringBuilder html = new StringBuilder();
 		html.append("<form action=\"/naam_aanpassing\" method=\"post\">");
 		html.append("<p>");
+		
 		if (getUserInfo().get(1).equals("NOT_LOGGED_IN")) {
 			html.append("U bent op dit moment niet ingelogd.");
 			html.append("</p></form>");
@@ -37,7 +36,7 @@ public class MainController {
 		}
 		else {
 			html.append("U bent op dit moment ingelogd als " + getUserInfo().get(1) + " met username " + getUserInfo().get(0) + ". ");
-			html.append("Uw uw naam is " + personService.getPersonByUsername(getUserInfo().get(0)).getVoornaam() + " " + personService.getPersonByUsername(getUserInfo().get(0)).getAchternaam() + ". ");
+			html.append("Uw naam is " + personService.getPersonByUsername(getUserInfo().get(0)).getVoornaam() + " " + personService.getPersonByUsername(getUserInfo().get(0)).getAchternaam() + ". ");
 			html.append("U kan uw naam aanpassen: ");
 			html.append("<input type=\"text\" id=\"nieuwe_voornaam\" name=\"nieuwe_voornaam\" placeholder=\"nieuwe voornaam\">");
 			html.append("<input type=\"text\" id=\"nieuwe_achternaam\" name=\"nieuwe_achternaam\" placeholder=\"nieuwe achternaam\">");
@@ -51,7 +50,7 @@ public class MainController {
 	}
 	
 	public ArrayList<String> getUserInfo() {
-		// helper function that gets the info of the current person logged in
+		// helper-functie die de data over de ingelogde user op een makkelijke manier weergeeft
 		// [0] = username ; [1] = functie
 		
 		ArrayList<String> res = new ArrayList<String>();
@@ -62,7 +61,6 @@ public class MainController {
 			System.out.println("error bij het ophalen van de rol van de ingelogde gebruiker (geen gebruiker met gebruikersnaam " + res.get(0) + "gevonden in de db)");
 			res.add("NOT_LOGGED_IN");
 		}
-		System.out.println("username = " + res.get(0) + "\tfunctie = " + res.get(1));
 		return res;
 	}
 	
@@ -82,11 +80,6 @@ public class MainController {
 		return "login";
 	}
 	
-	@GetMapping("/rest_stuff")
-	public String rest_stuff() {
-		return "rest_stuff";
-	}
-	
 	@GetMapping("/register")
 	public String register(Model m) {
 		Person p = new Person();
@@ -97,6 +90,7 @@ public class MainController {
 	
 	@PostMapping("/naam_aanpassing")
 	public String naam_aanpassing(HttpServletRequest req) {
+		// methode die de actie "/naam_aanpassing" verwerkt (opgeroepen uit MainController.create_header_html)
 		String nieuweVoornaam = req.getParameter("nieuwe_voornaam").toString();
 		String nieuweAchternaam = req.getParameter("nieuwe_achternaam").toString();
 		Person p = personService.getPersonByUsername(getUserInfo().get(0));

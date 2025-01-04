@@ -13,7 +13,8 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "authorities")
 public class Authorities {
-		
+	
+	// klasse die overeenkomt met de authorities tabel
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

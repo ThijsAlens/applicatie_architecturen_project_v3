@@ -27,15 +27,7 @@ public class RestCtrl {
 	
 	@Autowired 
 	private KlusServiceImpl klusService;
-	
-	@GetMapping("/person/{username}")
-	public String getPersonById(@PathVariable String username) {
-		return personService.getPersonByUsername(username).getUsername();
-	}
-	
-	
-	
-	
+
 	//curl -X DELETE http://localhost:8080/restDelete/6
 	@DeleteMapping("/restDelete/{klusId}")
 	public void restDeleteKlus(@PathVariable("klusId") int klusId) {

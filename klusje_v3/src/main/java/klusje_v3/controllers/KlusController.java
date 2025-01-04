@@ -23,23 +23,29 @@ public class KlusController {
 	private PersonServiceImpl personService;
 	
 	public ArrayList<String> getUserInfo() {
-		// helper function that gets the info of the current person logged in
+		// helper-functie die de data over de ingelogde user op een makkelijke manier weergeeft
 		// [0] = username ; [1] = functie
+		
 		ArrayList<String> res = new ArrayList<String>();
 		res.add(SecurityContextHolder.getContext().getAuthentication().getName());
-		res.add(personService.getPersonByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).getFunctie());
+		try {
+			res.add(personService.getPersonByUsername(SecurityContextHolder.getContext().getAuthentication().getName()).getFunctie());
+		} catch (Exception e) {
+			System.out.println("error bij het ophalen van de rol van de ingelogde gebruiker (geen gebruiker met gebruikersnaam " + res.get(0) + "gevonden in de db)");
+			res.add("NOT_LOGGED_IN");
+		}
 		return res;
 	}
 	
 	@PostMapping("/nieuw_klusje")
+	// methode die de actie "/nieuw_klusje" verwerkt (opgeroepen uit resources.templates.klant/index)
 	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
 		String name = req.getParameter("name").toString();
 		String beschrijving = req.getParameter("beschrijving").toString();
 		int prijs = Integer.parseInt(req.getParameter("prijs").toString());
 		String klantUsername = getUserInfo().get(0);
-		System.out.println("name = " + name + " beschrijving = " + beschrijving + " prijs = " + prijs + " klantUsername = " + klantUsername);
+
 		Klus klus = new Klus(name, personService.getPersonByUsername(klantUsername), prijs, beschrijving);
-		
 		klusService.addKlus(klus);
 		ses.setAttribute("nieuw_klusje_status", "nieuw klusje aangemaakt");
 		

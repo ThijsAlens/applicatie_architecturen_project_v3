@@ -17,6 +17,8 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "klus")
 public class Klus {
+	
+	// klasse die overeenkomt met de klus tabel
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

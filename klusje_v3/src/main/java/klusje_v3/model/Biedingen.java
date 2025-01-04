@@ -14,6 +14,7 @@ import jakarta.validation.constraints.NotBlank;
 @Table(name = "biedingen")
 public class Biedingen {
 	
+	// klasse die overeenkomt met de biedingen tabel
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -9,6 +9,9 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name="person")
 public class Person {
+	
+	// klasse die overeenkomt met de person tabel
+	
 	@Id
 	@NotBlank
     @Column(name = "USERNAME")

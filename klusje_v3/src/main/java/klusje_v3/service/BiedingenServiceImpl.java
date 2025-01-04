@@ -47,7 +47,7 @@ public class BiedingenServiceImpl implements BiedingenService {
 		ArrayList<Biedingen> biedingen = getAllBiedingen();
 		for (Biedingen bieding : biedingen) {
 			if (bieding.getKlus().getKlusId() == klusId & bieding.getKlusjesman().getUsername() == username) {
-				// row dound delete it
+				// row found delete it
 				repo.delete(bieding);
 			}
 		}
