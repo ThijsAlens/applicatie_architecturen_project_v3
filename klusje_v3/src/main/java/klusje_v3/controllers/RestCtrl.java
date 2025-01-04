@@ -39,7 +39,12 @@ public class RestCtrl {
 	//curl -X DELETE http://localhost:8080/restDelete/6
 	@DeleteMapping("/restDelete/{klusId}")
 	public void restDeleteKlus(@PathVariable("klusId") int klusId) {
-		klusService.deleteKlusById(klusId);
+		Klus k = klusService.getKlusById(klusId);
+		if (k.getStatus() == StatusEnum.BESCHIKBAAR || k.getStatus() == StatusEnum.GEBODEN) {
+			klusService.deleteKlusById(klusId);
+		}
+		else
+			System.out.println("MAG NI: FOUTE STATUS");
 	}
 	
 	
@@ -49,9 +54,13 @@ public class RestCtrl {
 	public void restWijsToe(@PathVariable int klusId,@PathVariable String username ) {
 		Klus k = klusService.getKlusById(klusId);
 		Person klusser = personService.getPersonByUsername(username);
-        k.setKlusjesman(klusser);
-
-        klusService.updateKlus(k);
+		if (k.getStatus() == StatusEnum.GEBODEN) {
+	        k.setKlusjesman(klusser);
+	        k.setStatus(StatusEnum.TOEGEWEZEN);
+	        klusService.updateKlus(k);
+		}
+		else
+			System.out.println("MAG NI: FOUTE STATUS");
 		
 	}
 
@@ -92,8 +101,13 @@ curl -X POST "http://localhost:8080/restNieuweKlus" -H "Content-Type: applicatio
 	@PutMapping("/restBeoordeel/{klusId}/{rating}")
 	public void restBeoordeel(@PathVariable int klusId,@PathVariable int rating) {
 		Klus k = klusService.getKlusById(klusId);
-		k.setRating(rating);
-		klusService.updateKlus(k);
+		if(k.getStatus()==StatusEnum.UITGEVOERD) {
+			k.setRating(rating);
+			k.setStatus(StatusEnum.BEOORDEELD);
+			klusService.updateKlus(k);
+		}
+		else
+			System.out.println("MAG NI: FOUTE STATUS");
 	}
 	
 	
