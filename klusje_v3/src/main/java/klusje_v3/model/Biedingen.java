@@ -22,18 +22,18 @@ public class Biedingen {
     private int id;
     
     @ManyToOne
-    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME", insertable = false, updatable = false)
+    @JoinColumn(name = "KLUSJESMAN_USERNAME", referencedColumnName = "USERNAME")
     private Person klusjesman;
 
     @ManyToOne
-    @JoinColumn(name = "KLUS_ID", referencedColumnName = "KLUS_ID", insertable = false, updatable = false)
+    @JoinColumn(name = "KLUS_ID", referencedColumnName = "KLUS_ID")
     private Klus klus;
 
 	public Biedingen() {
 		super();
 	}
 
-	public Biedingen( Person klusjesman, Klus klus) {
+	public Biedingen(Person klusjesman, Klus klus) {
 		super();
 
 		this.klusjesman = klusjesman;

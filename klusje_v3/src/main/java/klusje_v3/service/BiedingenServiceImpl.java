@@ -38,4 +38,8 @@ public class BiedingenServiceImpl implements BiedingenService {
 			}
 		}
 	}
+
+	public void addBieding(Biedingen bieding) {
+		repo.save(bieding);
+	}
 }

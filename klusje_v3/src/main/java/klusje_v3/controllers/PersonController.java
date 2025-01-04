@@ -163,12 +163,11 @@ public class PersonController {
 	}
 	
 	@PostMapping ("/klant_index_uitgevoerd_update")
-	public String klant_index_uitgevoerd_update(HttpServletRequest req, HttpSession ses) {
+	public String klant_index_uitgevoerd_update(HttpServletRequest req) {
 		int rating = Integer.parseInt(req.getParameter("rating").toString());
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Klus k = klusService.getKlusById(klusId);
 		k.setRating(rating);
-		System.out.println("na set rating");
 		k.setStatus(StatusEnum.BEOORDEELD);
 		klusService.updateKlus(k);
 		return "redirect:/klant/index";
@@ -196,7 +195,8 @@ public class PersonController {
 		
 		for (Klus klus : klussen) {
 			html.append("<tr>");
-			if (klus.getStatus() != StatusEnum.BEOORDEELD)
+			// check wether the klus is done or the klusjesman has already applied for it
+			if (klus.getStatus() != StatusEnum.BEOORDEELD & !biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus).contains(getUserInfo().get(0)))
 				// standard info for a klus
 				html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
 			
@@ -206,6 +206,9 @@ public class PersonController {
 				// klant has made a new klusje, let the klusjesman bieden
 				// form action: /klusjesman_index_geboden_update
 				// req.parameter: key -> klusId
+				if (biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus).contains(getUserInfo().get(0)))
+					// klusjesman has already applied for the klus, so skip
+					break;
 				html.append("<td>");
 				int key1 = klus.getKlusId();
 				html.append("<form action=\"/klusjesman_index_geboden_update\" method=\"post\">");
@@ -234,17 +237,38 @@ public class PersonController {
 			html.append("</tr>");			
 		}
 		html.append("</table>");
+		if (html.toString().equals("<table><tr><td>Klus ID</td><td>Naam van de klus</td><td>Prijs</td><td>Beschrijving</td><td>status</td><td>Extra info</td></tr><tr></tr><tr></tr></table>")) {
+			// nothing is found for the klusjesman to do
+			html = new StringBuilder();
+			html.append("<p>Geen klusjes gevonden voor u.</p>");
+		}
 		ses.setAttribute("klusjesman_index_HTML", html.toString());
 		return "/klusjesman/index";
 	}
 	
 	@PostMapping("/klusjesman_index_geboden_update")
-	public String klusjesman_index_geboden_update(HttpServletRequest req, HttpSession ses) {
+	public String klusjesman_index_geboden_update(HttpServletRequest req) {
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
-		Person klusjesman = 
+		Person klusjesman = personService.getPersonByUsername(getUserInfo().get(0));
+		
+		Klus k = klusService.getKlusById(klusId);
+		k.setStatus(StatusEnum.GEBODEN);
+		klusService.updateKlus(k);
+		
+		Biedingen bieding = new Biedingen(klusjesman, k);
+		biedingenService.addBieding(bieding);
+		
+		return "redirect:/klusjesman/index";
+	}
+	
+	@PostMapping("klusjesman_index_uitgevoerd_update")
+	public String klusjesman_index_uitgevoerd_update(HttpServletRequest req) {
+		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Klus k = klusService.getKlusById(klusId);
 		
-		k.setKlusjesman();
+		k.setStatus(StatusEnum.UITGEVOERD);
+		
+		klusService.updateKlus(k);
 		return "redirect:/klusjesman/index";
 	}
 }
