@@ -61,6 +61,14 @@ public class PersonController {
 			return "redirect:/";
 	}
 	
+	/*
+	 * =====================================================================
+	 * klanten-zijde:
+	 * 		correct weergeven van de klantenpagina op basis van de db
+	 * 		correct opvangen van aanpassingen door de klant
+	 * =====================================================================
+	 */
+	
 	@GetMapping("/klant/index")
 	public String klant_index(HttpSession ses) {
 		StringBuilder html = new StringBuilder();
@@ -98,14 +106,14 @@ public class PersonController {
 				ArrayList<String> klusjesmannenUsernames = biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus);
 				for (String klusjesmanUsername : klusjesmannenUsernames) {
 					System.out.println("geboden klusjesmannen: " + klusjesmannenUsernames.toString());
-					String key = klusjesmanUsername;
+					String key1 = klusjesmanUsername;
 					String rating = klusService.getRatingByKlusjesmanUsername(klusjesmanUsername) == -1 ? "nog geen" : klusService.getRatingByKlusjesmanUsername(klusjesmanUsername).toString();
 					String value = klusjesmanUsername + " (rating = " + rating + ")";
-					html.append("<option value=\"" + key + "\">" + value + "</option>");
+					html.append("<option value=\"" + key1 + "\">" + value + "</option>");
 				}
 				html.append("</select>");
-				int key = klus.getKlusId();
-				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				int key2 = klus.getKlusId();
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key2 + "\">");
 				html.append("<input type=\"submit\" value=\"Wijs toe\">");
 				html.append("</form></td>");
 				break;
@@ -122,10 +130,10 @@ public class PersonController {
 				// req.parameter: rating -> rating
 				// req.parameter: key -> klusId
 				html.append("<td>Klus is uitgevoerd:");
-				int key2 = klus.getKlusId();
+				int key3 = klus.getKlusId();
 				html.append("<form action=\"/klant_index_uitgevoerd_update\" method=\"post\">");
 				html.append("<input type=\"text\" id=\"rating\" name=\"rating\" placeholder=\"rating\">");
-				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key2 + "\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key3 + "\">");
 				html.append("<input type=\"submit\" value=\"Beoordeel klus\">");
 				html.append("</form></td>");
 				break;
@@ -164,5 +172,79 @@ public class PersonController {
 		k.setStatus(StatusEnum.BEOORDEELD);
 		klusService.updateKlus(k);
 		return "redirect:/klant/index";
+	}
+	
+	/*
+	 * =====================================================================
+	 * klusjesman-zijde:
+	 * 		correct weergeven van de klusjesmanpagina op basis van de db
+	 * 		correct opvangen van aanpassingen door de klusjesman
+	 * =====================================================================
+	 */
+	
+	@GetMapping("/klusjesman/index")
+	public String klusjesman_index(HttpSession ses) {
+		StringBuilder html = new StringBuilder();
+		
+		ArrayList<Klus> possibleKlussen = klusService.getAllAplicableKlussen();
+		ArrayList<Klus> toegewezenKlussen = klusService.getAllToegewezenKlussenByKlusjesmanUsername(getUserInfo().get(0));
+		ArrayList<Klus> klussen = new ArrayList<Klus>(possibleKlussen);
+		klussen.addAll(toegewezenKlussen);
+		
+		html.append("<table>");
+		html.append("<tr><td>Klus ID</td><td>Naam van de klus</td><td>Prijs</td><td>Beschrijving</td><td>status</td><td>Extra info</td></tr>");
+		
+		for (Klus klus : klussen) {
+			html.append("<tr>");
+			if (klus.getStatus() != StatusEnum.BEOORDEELD)
+				// standard info for a klus
+				html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
+			
+			switch (klus.getStatus()) {
+			case BESCHIKBAAR:
+			case GEBODEN:
+				// klant has made a new klusje, let the klusjesman bieden
+				// form action: /klusjesman_index_geboden_update
+				// req.parameter: key -> klusId
+				html.append("<td>");
+				int key1 = klus.getKlusId();
+				html.append("<form action=\"/klusjesman_index_geboden_update\" method=\"post\">");
+				html.append("<input type=\"submit\" value=\"Appliceer op deze klus\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key1 + "\">");
+				html.append("</form></td>");
+				break;
+				
+			case TOEGEWEZEN:
+				// klant has toegewezen the klusje, let the klusjesman uitvoeren
+				// form action: /klusjesman_index_uitgevoerd_update
+				// req.parameter: key -> klusId
+				html.append("<td>");
+				int key2 = klus.getKlusId();
+				html.append("<form action=\"/klusjesman_index_uitgevoerd_update\" method=\"post\">");
+				html.append("<input type=\"submit\" value=\"Ik heb deze klus uitgevoerd\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key2 + "\">");
+				html.append("</form></td>");
+				break;
+			
+			case UITGEVOERD:
+			case BEOORDEELD:
+				// klusje is done, no actions
+				break;
+			}
+			html.append("</tr>");			
+		}
+		html.append("</table>");
+		ses.setAttribute("klusjesman_index_HTML", html.toString());
+		return "/klusjesman/index";
+	}
+	
+	@PostMapping("/klusjesman_index_geboden_update")
+	public String klusjesman_index_geboden_update(HttpServletRequest req, HttpSession ses) {
+		int klusId = Integer.parseInt(req.getParameter("key").toString());
+		Person klusjesman = 
+		Klus k = klusService.getKlusById(klusId);
+		
+		k.setKlusjesman();
+		return "redirect:/klusjesman/index";
 	}
 }

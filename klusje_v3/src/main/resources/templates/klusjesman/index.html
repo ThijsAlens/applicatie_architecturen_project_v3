@@ -5,14 +5,10 @@
     <div th:replace="fragments/general.html :: header"></div>
     <div>
 		<h1>Welkom op de klusjesmannen-website</h1>
-		<h2>Een overzicht van uw klusjes</h2>
 	</div>
 	<div>
-		<form action="/change_openstaande_klusjes_submit" method="post">
-			<span th:text="${openstaande_klusjes}"></span>
-		</form>
+		<h2>Openstaande klusjes</h2>
+		<div th:utext="${session.klusjesman_index_HTML}"></div>
 	</div>
-	
-	<p th:text=${session.name}>niets</p>
     <div th:replace="fragments/general.html :: footer"></div>
 </html>

@@ -60,4 +60,30 @@ public class KlusServiceImpl  implements KlusService{
 		repo.save(k);
 	}
 
+	public ArrayList<Klus> getAllAplicableKlussen() {
+		// get all klussen where klusjesmannen can still bied on
+		ArrayList<Klus> klussen = getAllKlussen();
+		ArrayList<Klus> gefilterdeKlussen = new ArrayList<Klus>();
+		for (Klus klus : klussen) {
+			if (klus.getStatus() == StatusEnum.BESCHIKBAAR | klus.getStatus() == StatusEnum.GEBODEN) {
+				gefilterdeKlussen.add(klus);
+			}
+		}
+		return gefilterdeKlussen;
+	}
+
+	public ArrayList<Klus> getAllToegewezenKlussenByKlusjesmanUsername(String username) {
+		ArrayList<Klus> klussen = getAllKlussen();
+		ArrayList<Klus> gefilterdeKlussen = new ArrayList<Klus>();
+		for (Klus klus : klussen) {
+			if (klus.getStatus() != StatusEnum.TOEGEWEZEN) {
+				continue;
+			}
+			if (klus.getKlusjesman().getUsername().equals(username)) {
+				gefilterdeKlussen.add(klus);
+			}
+		}
+		return gefilterdeKlussen;
+	}
+
 }
