@@ -65,29 +65,4 @@ public class MainController {
 		return "register";
 	}
 	
-	@PostMapping("/rest_stuff_post")
-	public String check_login(HttpSession ses, HttpServletRequest req) {
-		RestTemplate rest = new RestTemplate();
-		String person = req.getParameter("person").toString();
-		Person res = rest.getForObject("http://localhost:8080/person/"+person, Person.class);
-		ses.setAttribute("checked_person", res.getFunctie());
-		return "redirect:/rest_stuff";
-	}
-	
-	
-	@PostMapping("/rest_add_klus")
-	public String addDel(Model model, HttpServletRequest req, HttpSession ses) {
-	        int id = Integer.parseInt(req.getParameter("id"));
-	        String name = req.getParameter("name");
-	        String description = req.getParameter("description");
-	        int price = Integer.parseInt(req.getParameter("price"));
-	        Person klant = personService.getPersonByUsername(getUserInfo().get(0));
-	        Klus klus = new Klus(name, klant, price, description);
-	        klus.setStatus(StatusEnum.BESCHIKBAAR);
-	        RestTemplate rest = new RestTemplate();
-	        String url = "http://localhost:8080/klus/restNieuweKlus";
-	        rest.postForObject(url, klus, Klus.class);
-	        return "redirect:/";
-	        
-	}
 }
