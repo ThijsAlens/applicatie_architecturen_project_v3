@@ -42,4 +42,14 @@ public class BiedingenServiceImpl implements BiedingenService {
 	public void addBieding(Biedingen bieding) {
 		repo.save(bieding);
 	}
+
+	public void removeBiedingenByKlusIdAndKlusjesmanUsername(int klusId, String username) {
+		ArrayList<Biedingen> biedingen = getAllBiedingen();
+		for (Biedingen bieding : biedingen) {
+			if (bieding.getKlus().getKlusId() == klusId & bieding.getKlusjesman().getUsername() == username) {
+				// row dound delete it
+				repo.delete(bieding);
+			}
+		}
+	}
 }

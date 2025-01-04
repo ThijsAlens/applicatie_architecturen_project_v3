@@ -220,7 +220,7 @@ public class PersonController {
 		for (Klus klus : klussen) {
 			html.append("<tr>");
 			// check wether the klus is done or the klusjesman has already applied for it
-			if (klus.getStatus() != StatusEnum.BEOORDEELD & !biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus).contains(getUserInfo().get(0)))
+			if (klus.getStatus() != StatusEnum.BEOORDEELD)
 				// standard info for a klus
 				html.append("<td>" + klus.getKlusId() + "</td><td>" + klus.getName() + "</td><td>" + klus.getPrijs() + "</td><td>" + klus.getBeschrijving() + "</td><td>" + klus.getStatus() + "</td>");
 			
@@ -230,16 +230,24 @@ public class PersonController {
 				// klant has made a new klusje, let the klusjesman bieden
 				// form action: /klusjesman_index_geboden_update
 				// req.parameter: key -> klusId
-				if (biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus).contains(getUserInfo().get(0)))
-					// klusjesman has already applied for the klus, so skip
+				if (biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus).contains(getUserInfo().get(0))) {
+					// klusjesman has already applied for the klus, give the possibility to remove his bieding
+					html.append("<td>");
+					int key1 = klus.getKlusId();
+					html.append("<form action=\"/klusjesman_index_geboden_update\" method=\"post\">");
+					html.append("<input type=\"submit\" value=\"trek uw bod in\">");
+					html.append("<input type=\"hidden\" name=\"key\" value=\"" + key1 + "\">");
+					html.append("</form></td>");
 					break;
-				html.append("<td>");
-				int key1 = klus.getKlusId();
-				html.append("<form action=\"/klusjesman_index_geboden_update\" method=\"post\">");
-				html.append("<input type=\"submit\" value=\"Appliceer op deze klus\">");
-				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key1 + "\">");
-				html.append("</form></td>");
-				break;
+				} else {
+					html.append("<td>");
+					int key1 = klus.getKlusId();
+					html.append("<form action=\"/klusjesman_index_geboden_update\" method=\"post\">");
+					html.append("<input type=\"submit\" value=\"Appliceer op deze klus\">");
+					html.append("<input type=\"hidden\" name=\"key\" value=\"" + key1 + "\">");
+					html.append("</form></td>");
+					break;
+				}
 				
 			case TOEGEWEZEN:
 				// klant has toegewezen the klusje, let the klusjesman uitvoeren
@@ -278,14 +286,23 @@ public class PersonController {
 	public String klusjesman_index_geboden_update(HttpServletRequest req) {
 		int klusId = Integer.parseInt(req.getParameter("key").toString());
 		Person klusjesman = personService.getPersonByUsername(getUserInfo().get(0));
-		
 		Klus k = klusService.getKlusById(klusId);
+		
+		if (biedingenService.getGebodenKlusjesmannenUsernameByKlus(k).contains(klusjesman.getUsername())) {
+			// klusjesman has already geboden, delete him from the bieding
+			biedingenService.removeBiedingenByKlusIdAndKlusjesmanUsername(k.getKlusId(), klusjesman.getUsername());
+			if (biedingenService.getGebodenKlusjesmannenUsernameByKlus(k).size() == 0) {
+				// if it was the last klusjesman that applied, change status back to beschikbaar
+				k.setStatus(StatusEnum.BESCHIKBAAR);
+				klusService.updateKlus(k);
+			}
+		} else {
 		k.setStatus(StatusEnum.GEBODEN);
 		klusService.updateKlus(k);
 		
 		Biedingen bieding = new Biedingen(klusjesman, k);
 		biedingenService.addBieding(bieding);
-		
+		}
 		return "redirect:/klusjesman/index";
 	}
 	
