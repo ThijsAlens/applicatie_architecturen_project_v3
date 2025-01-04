@@ -8,5 +8,5 @@ public interface KlusService {
 
 	public void addKlus(Klus klus);
 	public ArrayList<Klus> getAllKlussenByKlantUsername(String username);
-
+	public Klus getKlusById(int klusId);
 }

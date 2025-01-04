@@ -45,4 +45,8 @@ public class KlusServiceImpl  implements KlusService{
 		return (float) (count == 0 ? -1 : sum / count);
 	}
 
+	public Klus getKlusById(int klusId) {
+		return repo.getById(klusId);
+	}
+
 }

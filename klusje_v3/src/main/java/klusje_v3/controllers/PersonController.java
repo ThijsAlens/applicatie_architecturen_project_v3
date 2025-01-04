@@ -89,11 +89,12 @@ public class PersonController {
 			case GEBODEN:
 				// klusjesmannen have geboden, let the klant assign one
 				// form action: /klant_index_geboden_update
-				// req.parameter: geselecteerde_klusjesmannen -> klusjesmanUsername
+				// req.parameter: geselecteerde_klusjesman -> klusjesmanUsername
+				// req.parameter: key -> klusId
 				html.append("<td>");
 				html.append("<form> action=\"/klant_index_geboden_update\" method=\"post\"");
 				html.append("<label for=\"klusjesmannen\">Selecteer een klusjesman</label>");
-				html.append("<select name=\"geselecteerde_klusjesmannen\" id=\"geselecteerde_klusjesmannen\">");
+				html.append("<select name=\"geselecteerde_klusjesman\" id=\"geselecteerde_klusjesman\">");
 				ArrayList<String> klusjesmannenUsernames = biedingenService.getGebodenKlusjesmannenUsernameByKlus(klus);
 				for (String klusjesmanUsername : klusjesmannenUsernames) {
 					String key = klusjesmanUsername;
@@ -101,7 +102,10 @@ public class PersonController {
 					String value = klusjesmanUsername + " (rating = " + rating;
 					html.append("<option value=\"" + key + "\">" + value + "</option>");
 				}
-				html.append("</select></form></td>");
+				html.append("</select>");
+				int key = klus.getKlusId();
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("</form></td>");
 				break;
 				
 			case TOEGEWEZEN:
@@ -112,11 +116,14 @@ public class PersonController {
 				
 			case UITGEVOERD:
 				// klusjesman has uitgevoerd, let the klant rate
+				// form action: /klant_index_uitgevoerd_update
+				// req.parameter: rating -> rating
+				// req.parameter: key -> klusId
 				html.append("<td>Klus is uitgevoerd:");
-				int key = klus.getKlusId();
+				int key2 = klus.getKlusId();
 				html.append("<form> action=\"/klant_index_uitgevoerd_update\" method=\"post\"");
 				html.append("<input type=\"text\" id=\"rating\" name=\"rating\" placeholder=\"rating\">");
-				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key + "\">");
+				html.append("<input type=\"hidden\" name=\"key\" value=\"" + key2 + "\">");
 				html.append("</form></td>");
 				break;
 				
@@ -133,10 +140,24 @@ public class PersonController {
 	
 	
 	
-	@PostMapping ("klant_update_klusjes")
-	public String klant_update_klusjes() {
+	@PostMapping ("/nieuw_klusje")
+	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
+		Klus k = new Klus(req.getParameter("name").toString(), getUserInfo().get(0), Integer.parseInt(req.getParameter("prijs").toString()), req.getParameter("beschrijving").toString());
+		klusService.addKlus(k);
+		ses.setAttribute("nieuw_klusje_status", "nieuw klusje aangemaakt");
+		return "redirect:/klant/index";
+	}
+	
+	@PostMapping ("/klant_index_geboden_update")
+	public String klant_index_geboden_update(HttpServletRequest req, HttpSession ses) {
+		String selectedKlusjesmanUsername = req.getParameter("geselecteerde_klusjesman").toString();
+		int klusId = Integer.parseInt(req.getParameter("key").toString());
+		klusService.getKlusById(klusId);
 		return "";
 	}
 	
-	
+	@PostMapping ("/klant_index_uitgevoerd_update")
+	public String klant_index_uitgevoerd_update() {
+		return "";
+	}
 }
