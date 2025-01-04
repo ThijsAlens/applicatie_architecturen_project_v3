@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.constraints.Min;
@@ -32,32 +33,33 @@ public class RestCtrl {
 	
 	@DeleteMapping("/restDelete/{klusId}")
 	public void restDeleteKlus(@PathVariable int KlusId) {
-		//deleteKlus in klusseervice
+		klusService.deleteKlusById(KlusId);
 		
 		
 	}
 	
 	@PutMapping("/restWijstoe/{klusId}/{username}")
 	public void restWijsToe(@PathVariable int KlusId,@PathVariable String username ) {
-		// wijs toe in klusservice
+		Klus k = klusService.getKlusById(KlusId);
+		Person klusser = personService.getPersonByUsername(username);
+        k.setKlusjesman(klusser);
+
+        klusService.updateKlus(k);
 		
 	}
 	
 	
-	@PostMapping("/restNieuweKlus/{name}/{klant_username}/{prijs}/{beschrijving}")
-	public void restNieuweKlus(@PathVariable String name,@PathVariable String klant_username,@PathVariable int prijs,@PathVariable String beschrijving) {
-		
-		Person klant = personService.getPersonByUsername(klant_username);
-		Klus k = new Klus(name,klant,prijs,beschrijving);
+	@PostMapping("/restNieuweKlus")
+	public void restNieuweKlus(@RequestBody Klus k) {
 		klusService.addKlus(k);
-		
-		
 	}
 	
 	
 	@PutMapping("/restBeoordeel/{klusId}/{rating}")
 	public void restBeoordeel(@PathVariable int KlusId,@PathVariable int rating) {
-		//beoordeel in klusservice
+		Klus k = klusService.getKlusById(KlusId);
+		k.setRating(rating);
+		klusService.updateKlus(k);
 	}
 	
 	
