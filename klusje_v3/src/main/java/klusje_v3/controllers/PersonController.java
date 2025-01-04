@@ -146,6 +146,16 @@ public class PersonController {
 			html.append("</tr>");			
 		}
 		html.append("</table>");
+		
+		// check the string to see if the table is empty
+		String regex = "^<table><tr><td>Klus ID</td><td>Naam van de klus</td><td>Prijs</td><td>Beschrijving</td><td>status</td><td>Extra info</td></tr>(<tr></tr>)*</table>$";
+		Pattern pattern = Pattern.compile(regex);
+		if (pattern.matcher(html.toString()).matches()) {
+			// nothing is found for the klusjesman to do
+			html = new StringBuilder();
+			html.append("<p>Geen info gevonden voor u.</p>");
+		}
+		
 		ses.setAttribute("klant_index_HTML", html.toString());
 		return "/klant/index";
 	}
