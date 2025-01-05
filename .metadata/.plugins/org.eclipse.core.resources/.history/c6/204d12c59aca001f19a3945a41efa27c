@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html>
+    <div th:replace="fragments/general.html :: head"></div>
+    <div th:replace="fragments/general.html :: header"></div>
+    <div>
+		<h1>Welkom op de klusjesmannen-website</h1>
+	</div>
+	<div>
+		<h2>Openstaande klusjes</h2>
+		<div th:utext="${session.klant_index_HTML}"></div>
+	</div>
+    <div th:replace="fragments/general.html :: footer"></div>
+</html>

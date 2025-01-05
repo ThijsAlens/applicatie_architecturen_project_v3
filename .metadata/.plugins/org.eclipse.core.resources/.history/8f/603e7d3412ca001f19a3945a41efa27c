@@ -1,0 +1,5 @@
+package klusje_v3.repository;
+
+public interface BiedingenRepository {
+
+}

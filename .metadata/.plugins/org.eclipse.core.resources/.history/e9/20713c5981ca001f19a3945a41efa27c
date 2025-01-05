@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <div th:replace="fragments/general.html :: head"></div>
+    <div th:replace="fragments/general.html :: header"></div>
+	
+    <div>
+		<h1>Welkom op de klanten-website</h1>
+		<h2>Maak een nieuw klusje aan</h2>
+		<form action="/nieuw_klusje" method="post">
+			<input type="text" id="name" name="name" placeholder="de naam van uw klusje" >
+			<input type="text" id="beschrijving" name="beschrijving" placeholder="beschrijving van het klusje" >
+			<input type="text" id="prijs" name="prijs" placeholder="prijs dat u wilt betalen voor het klusje">
+			<input type="submit" value="Voeg klusje toe">
+		</form>
+		<p th:text="${nieuw_klusje_status}"></p>
+    </div>
+	<div>
+		<h2>Openstaande klusjes</h2>
+		<form action="/klant_update_klusjes" method="post">
+			<span th:text="${klant_index_HTML}"></span>
+		</form>
+	</div>
+	
+    <div th:replace="fragments/general.html :: footer"></div>
+</html>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -59,22 +60,31 @@ public class PersonController {
 	
 	@PostMapping("/register_post")
 	public String register_post(Model mod, HttpSession ses, HttpServletRequest req,  @ModelAttribute("new_person") @Valid Person customer, Errors e) {
+		ses.invalidate();
 		// Check for validation errors
 		if (e.hasErrors()) {
 			return "register";  
 		} else {
+			String unencryptedPassword = customer.getPassword();
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 			String encryptedPassword = passwordEncoder.encode(customer.getPassword());
 			customer.setPassword(encryptedPassword);  
 			
-			ses.setAttribute("user", customer);
 			personService.addPerson(customer);
 			System.out.println();
 			System.out.println();
 			System.out.println(customer);
 			System.out.println(customer.getFunctie());
 			authService.addRole(customer, customer.getFunctie());
-
+			
+			System.out.println("credentials: " + customer.getUsername() + " ; " + unencryptedPassword);
+			
+			// log in automaticially
+			try {
+				req.login(customer.getUsername(), unencryptedPassword);
+			} catch (ServletException e1) {
+				e1.printStackTrace();
+			}
 			return "redirect:/";
 		}
 	}
@@ -142,7 +152,7 @@ public class PersonController {
 				for (String klusjesmanUsername : klusjesmannenUsernames) {
 					String key1 = klusjesmanUsername;
 					String rating = klusService.getRatingByKlusjesmanUsername(klusjesmanUsername) == -1 ? "nog geen" : klusService.getRatingByKlusjesmanUsername(klusjesmanUsername).toString();
-					String value = klusjesmanUsername + " (rating van " + rating + " op 10)";
+					String value = rating == "nog geen" ? klusjesmanUsername + " (nog geen rating)" : klusjesmanUsername + " (rating van " + rating + " op 10)";
 					html.append("<option value=\"" + key1 + "\">" + value + "</option>");
 				}
 				html.append("</select>");

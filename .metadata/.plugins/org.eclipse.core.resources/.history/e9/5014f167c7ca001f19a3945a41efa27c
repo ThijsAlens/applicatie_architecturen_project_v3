@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<div th:replace="fragments/general.html :: head"></div>
+	<div th:replace="fragments/general.html :: header"></div>
+	
+	<div>
+		<p>U bent momenteeel niet ingelogd. Ga naar <a href="/login">de loginpagina</a> om verder te gaan</p>
+		
+	</div>
+	
+	<div th:replace="fragments/general.html :: footer"></div>

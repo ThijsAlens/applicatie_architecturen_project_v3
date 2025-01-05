@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <div th:replace="fragments/general.html :: head"></div>
+    <div th:replace="fragments/general.html :: header"></div>
+	
+	<div>
+		<p th:text="${session.allKlusjes}"></p>
+	</div>
+	
+    <div>
+        <form th:action="@{/rest_stuff_add}" method="post">
+			<input type="text" id="name" name="name" placeholder="naam van het klusje">
+			<input type="text" id="prijs" name="prijs" placeholder="prijs van het klusje">
+			<input type="text" id="beschrijving" name="beschrijving" placeholder="beschrijving van het klusje">
+			<input type="submit" value="klusje toevoegen">
+        </form>
+		<p th:text="${session.statusAddKlus}"></p>
+    </div>
+	
+	<div>
+		<form th:action="@{/rest_stuff_delete}" method="post">
+			<input type="text" id="klus_id" name="klus_id" placeholder="het id van het klusje dat je wilt verwijderen">
+			<input type="submit" value="verwijder">
+		</form>
+		<p th:text="${session.statusDeleteKlus}"></p>
+	</div>
+	
+	<div>
+		<form th:action="@{/rest_stuff_wijs_toe}" method="post">
+			<input type="text" id="klus_id" name="klus_id" placeholder="het id van het klusje dat je wilt toewijzen">
+			<input type="text" id="klusjesman_id" name="klusjesman_id" placeholder="het id van de klusjesman die het klusje mag uitvoeren">
+			<input type="submit" value="wijs toe">
+		</form>
+		<p th:text="${session.statusWijsToe}"></p>
+	</div>
+	
+	<div>
+	    <form th:action="@{/rest_stuff_beoordeel}" method="post">
+			<input type="text" id="klus_id" name="klus_id" placeholder="het id van het klusje dat je wilt beoordelen">
+			<input type="text" id="score" name="score" placeholder="de score">
+			<input type="submit" value="beoordeel">
+	    </form>
+		<p th:text="${session.statusBeoordeel}"></p>
+	</div>
+		
+    <div th:replace="fragments/general.html :: footer"></div>
+</html>

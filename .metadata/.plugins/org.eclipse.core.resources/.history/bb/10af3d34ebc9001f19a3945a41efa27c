@@ -1,0 +1,8 @@
+package klusje_v3.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Person {
+	
+}

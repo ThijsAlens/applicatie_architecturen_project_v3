@@ -1,0 +1,17 @@
+package klusje_v3.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Biedingen {
+
+	@ManyToOne
+    @JoinColumn(name = "KLUS_ID")
+    private Klus klus;
+
+    @ManyToOne
+    @JoinColumn(name = "KLUSJESMAN_USERNAME")
+    private Person klusjesman;
+}

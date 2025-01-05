@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head">
+	    <link rel="stylesheet" href="/css/style.css">
+	</head>
+	<header th:fragment="header">
+	    <table>
+	        <tr>
+	            <td>
+	                <a href="/">Home</a>
+	            </td>
+	            <td>
+	                <a href="/login">Login</a>
+	            </td>
+				<td>
+					<a href="/logout">Logout</a>
+				</td>
+				<td>
+					<a href="/rest_stuff">Rest_API</a>
+				</td>
+    	    </tr>
+			<tr>
+				<div th:utext="${session.header_html}"></div>
+				<form action="/naam_aanpassing" method="post">
+					<p><span th:text="${session.username}"></span>
+						Uw voornaam is <span th:text="${session.voornaam}"></span>. Pas deze aan indien gewenst:</p>
+					<input type="text" id="nieuwe_voornaam" name="nieuwe_voornaam" placeholder="nieuwe voornaam">
+					<p>Uw achternaam is <span th:text="${session.username}"></span></p>
+					<input type="text" id="nieuwe_achternaam" name="nieuwe_achternaam" placeholder="nieuwe achternaam">
+					<input type="submit" value="pas een of beide namen aan">
+					<p th:text="${session.extra_text_for_rating}"></p>
+				</form>
+			</tr>
+    	</table>
+	</header>
+
+	<footer th:fragment="footer">
+    	Kopierechten van KRB.
+	</footer>
+</html>

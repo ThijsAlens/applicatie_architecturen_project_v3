@@ -1,0 +1,15 @@
+package klusje_v3.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class KlusController {
+	@PostMapping("/nieuw_klusje")
+	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
+		
+	}
+}

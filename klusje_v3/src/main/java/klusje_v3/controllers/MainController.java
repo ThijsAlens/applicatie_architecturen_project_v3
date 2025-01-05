@@ -43,7 +43,7 @@ public class MainController {
 			html.append("<input type=\"text\" id=\"nieuwe_achternaam\" name=\"nieuwe_achternaam\" placeholder=\"nieuwe achternaam\">");
 			html.append("<input type=\"submit\" value=\"Pas een of beide aan\"> ");
 			if (getUserInfo().get(1).equals("KLUSJESMAN")) {
-				html.append("Uw rating is " + klusService.getRatingByKlusjesmanUsername(getUserInfo().get(0)) + ".");
+				html.append(klusService.getRatingByKlusjesmanUsername(getUserInfo().get(0)) != -1 ? "Uw rating is " + klusService.getRatingByKlusjesmanUsername(getUserInfo().get(0)) + "." : "U hebt nog geen rating.");
 			}
 			html.append("</p></form>");
 			return html.toString();

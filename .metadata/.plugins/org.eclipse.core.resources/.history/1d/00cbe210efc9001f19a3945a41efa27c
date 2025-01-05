@@ -1,0 +1,14 @@
+package klusje_v3.controllers;
+
+import klusje_v3.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class RestCtrl {
+	
+	@Autowired
+	private PersonServiceImpl personService;
+	
+	@GetMapping("/person/{id}")
+}

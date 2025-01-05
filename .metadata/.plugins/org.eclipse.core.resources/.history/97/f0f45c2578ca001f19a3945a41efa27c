@@ -1,0 +1,7 @@
+package klusje_v3.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BiedingenRepository extends JpaRepository<String, Integer> {
+
+}

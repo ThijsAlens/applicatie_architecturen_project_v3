@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<div th:replace="fragments/general.html :: head"></div>
+	<div th:replace="fragments/general.html :: header"></div>
+	
+	<form th:action="@{/register_post}" method='POST'>
+	    <input type="text" id="username" name="username" placeholder="gebruikersnaam" required >
+	    <input type="text" id="password" name="password" placeholder="wachtwoord" required>
+		<input type="text" id="voornaam" name="voornaam" placeholder="voornaam" required >
+		<input type="text" id="achternaam" name="achternaam" placeholder="achternaam" required>
+		<label for="functie">kies een functie:</label>
+		    <select id="functie" name="functie">
+		      <option value="KLANT">klant</option>
+		      <option value="KLUSJESMAN">klusjesman</option>
+		    </select>
+	    <input type="submit" value="registreer">
+	</form>
+	<p>Welcome, <span th:text="${#authentication.name}">User</span> </p>
+	<div th:replace="fragments/general.html :: footer"></div>
+</html>

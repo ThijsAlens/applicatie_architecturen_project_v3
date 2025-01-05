@@ -1,0 +1,12 @@
+package klusje_v3.service;
+
+import java.util.ArrayList;
+
+import klusje_v3.model.Klus;
+
+public interface KlusService {
+
+	void addKlus(Klus klus);
+	public ArrayList<Klus> getAllKlussenByKlantUsername(String string);
+
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head">
+	    <link rel="stylesheet" href="static/style.css">
+	</head>
+	<header th:fragment="header">
+	    <table>
+	        <tr>
+	            <td>
+	                <a href="/">Home</a>
+	            </td>
+	            <td>
+	                <a href="/login">Login</a>
+	            </td>
+				<td>
+					<a href="/logout">Logout</a>
+				</td>
+				<td>
+					<a href="/rest_stuff">Rest_API</a>
+				</td>
+    	    </tr>
+			<tr>
+				<form action="/naam_aanpassing" method="post">
+					<p>U bent op dit moment ingelogd als <span th:text="${session.username}"></span></p>
+					<p>Uw voornaam is <span th:text="${session.username}"></span> </p>
+				</form>
+			</tr>
+    	</table>
+	</header>
+
+	<footer th:fragment="footer">
+    	Kopierechten van KRB.
+	</footer>
+</html>

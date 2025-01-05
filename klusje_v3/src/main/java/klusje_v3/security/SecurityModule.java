@@ -36,6 +36,7 @@ public class SecurityModule {
                 .requestMatchers("/klusjesman/**").hasAuthority("KLUSJESMAN")
                 .requestMatchers("/klant/**").hasAuthority("KLANT")
                 .requestMatchers("/klant_index_beschikbaar_delete").hasAuthority("KLANT")
+                .requestMatchers("/rest/**").permitAll()
                 
                 .requestMatchers("/*").authenticated()                             
             )
