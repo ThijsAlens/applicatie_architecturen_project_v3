@@ -38,7 +38,7 @@ public class KlusController {
 	}
 	
 	@PostMapping("/nieuw_klusje")
-	// methode die de actie "/nieuw_klusje" verwerkt (opgeroepen uit resources.templates.klant/index)
+	// methode die de actie "/nieuw_klusje" verwerkt (opgeroepen uit resources.templates.klant/index) 
 	public String nieuw_klusje(HttpServletRequest req, HttpSession ses) {
 		String name = req.getParameter("name").toString();
 		String beschrijving = req.getParameter("beschrijving").toString();
